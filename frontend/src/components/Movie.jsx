@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 const Movie = ({movie}) => {
   
-  // used to extract to form an id from the imdb_url  
+  // used to extract an id from the imdb_url  
   const id = movie.imdb_url.slice(9, -1)
   console.log(id)
   
