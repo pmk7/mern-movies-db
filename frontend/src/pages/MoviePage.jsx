@@ -18,6 +18,7 @@ const MoviePage = () => {
   </Link>
   <Row>
     <Col md={5}>
+      <Card>
       <Card.Img src={movie.thumb_url} alt={movie.name} fluid />
       <Card.Body>
           <Card.Text>
@@ -25,7 +26,7 @@ const MoviePage = () => {
           </Card.Text>
           <Button variant="primary">Add To My Movies</Button>
         </Card.Body>
-
+        </Card>
     </Col>
     <Col md={3}>
     <ListGroup variant='flush'>
