@@ -19,9 +19,7 @@ const HomePage = () => {
                 </Col>
             ))
         }
-    </Row>
-    
-   
+    </Row> 
     </>
   )
 }

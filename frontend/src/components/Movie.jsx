@@ -4,10 +4,8 @@ import {Link} from 'react-router-dom'
 
 
 const Movie = ({movie}) => {
-  
   // used to extract an id from the imdb_url  
   const id = movie.imdb_url.slice(9, -1)
-  console.log(id)
   
   return (
     <Card className='my-3 p-3'>
