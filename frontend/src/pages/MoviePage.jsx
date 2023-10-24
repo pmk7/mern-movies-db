@@ -7,8 +7,7 @@ import movies from '../movies'
 const MoviePage = () => {
   const { id } = useParams()  
   const movie = movies.find(m => m.imdb_url === `/title/tt${id}/`)
-
-
+  
   return (
   <>
   <Link className='btn btn-dark my-4' to='/'>
