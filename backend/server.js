@@ -1,7 +1,9 @@
 import express from "express";
 import movies from "./data/movies.js";
+import dotenv from "dotenv";
+dotenv.config();
 
-const port = 9000;
+const port = process.env.PORT || 8000;
 
 const app = express();
 
