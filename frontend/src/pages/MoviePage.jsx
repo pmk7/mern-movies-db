@@ -17,7 +17,7 @@ const MoviePage = () => {
   <Row>
     <Col md={5}>
       <Card>
-      <Card.Img src={movie.thumb_url} alt={movie.name} fluid />
+      <Card.Img src={movie.image_url} alt={movie.name} fluid />
       <Card.Body>
           <Card.Text>
             {movie.desc}
