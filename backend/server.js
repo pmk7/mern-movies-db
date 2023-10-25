@@ -18,7 +18,8 @@ app.get("/api/movies", (req, res) => {
 app.get("/api/movies/title/:id", (req, res) => {
   const movie = movies.find((m) => {
     const urlParts = m.imdb_url.split("/");
-    const id = urlParts[urlParts.length - 2];
+    const idString = urlParts[urlParts.length - 2];
+    const id = idString.substring(2);
     return id === req.params.id;
   });
   res.json(movie);
