@@ -1,12 +1,22 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import {Row, Col, ListGroup, Card, Button} from 'react-bootstrap'
-import movies from '../movies'
+
 
 const MoviePage = () => {
+  const [movie, setMovies] = useState({})
+
   const { id } = useParams()  
-  const movie = movies.find(m => m.imdb_url === `/title/tt${id}/`)
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const {data} = await axios.get(`/api/movies/title/${id}`)
+      setMovies(data)
+    };
+    fetchMovies()
+  }, [id])
   
   return (
   <>
@@ -29,25 +39,24 @@ const MoviePage = () => {
     <Col md={3}>
     <ListGroup variant='flush'>
       <ListGroup.Item>
-      <h3>
+      <h1>
         {movie.name}
-      </h3> 
+      </h1> 
       </ListGroup.Item>
       <ListGroup.Item>
-        <strong>Rating</strong> <br />
+        <h5><strong>Rating</strong></h5>
         {movie.rating} / 10
       </ListGroup.Item>
       <ListGroup.Item>
-        {/* Fix display of actors names */}
-        <strong>Staring</strong> <br />
-        {movie.actors}
+      <h5><strong>Starring</strong></h5>
+        {movie && movie.actors && movie.actors.join(', ')}
       </ListGroup.Item>
       <ListGroup.Item>
-        <strong>Director</strong> <br />
+      <h5><strong>Director</strong></h5>
         {movie.directors}
       </ListGroup.Item>
       <ListGroup.Item>
-        <strong>Year</strong> <br />
+      <h5><strong>Year</strong></h5>
         {movie.year}
       </ListGroup.Item>
     </ListGroup>

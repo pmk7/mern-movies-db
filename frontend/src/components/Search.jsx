@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import Form from 'react-bootstrap/Form'
-import movies from '../movies'
 
 
 
 const Search = () => {
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const {data} = await axios.get('/api/movies')
+      setMovies(data)
+    };
+    fetchMovies()
+  }, [])
+
+
+
   const moviesLength = movies.length  
 
   return (
