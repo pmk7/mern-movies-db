@@ -6,18 +6,18 @@ import {Link} from 'react-router-dom'
 const Movie = ({movie}) => {
   const [isImageLoaded, setIsImageLoaded] = useState(true)   
   // used to extract an id from the imdb_url  
-  const id = movie.imdb_url.slice(9, -1)
+
   
   return (
     isImageLoaded && (
     <Card className='my-3 p-3'>
         {/* fix so empty card space is not visible*/}
-        <Link to={`/movie/${id}`}> 
+        <Link to={`/movie/${movie._id}`}> 
             <Card.Img src={movie.thumb_url} variant='top' onError={()=> setIsImageLoaded(false) } />
         </Link>
 
         <Card.Body>
-            <Link to={`/movie/${id}`}>
+            <Link to={`/movie/${movie._id}`}>
                 <Card.Title as='div'>
                     <strong>{movie.name}</strong>
                 </Card.Title>

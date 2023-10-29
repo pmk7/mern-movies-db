@@ -12,7 +12,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const {data} = await axios.get(`/api/movies/title/${id}`)
+      const {data} = await axios.get(`/api/movies/${id}`)
       setMovies(data)
     };
     fetchMovies()
@@ -53,7 +53,7 @@ const MoviePage = () => {
       </ListGroup.Item>
       <ListGroup.Item>
       <h5><strong>Director</strong></h5>
-        {movie.directors}
+        {movie && movie.directors && movie.directors.join(', ')}
       </ListGroup.Item>
       <ListGroup.Item>
       <h5><strong>Year</strong></h5>
