@@ -29,7 +29,7 @@ const movies = [
   },
   {
     actors: ["Miles Teller", "J.K. Simmons", "Melissa Benoist"],
-    desc: "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student\u0026apos;s potential.",
+    desc: "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.",
     directors: ["Damien Chazelle"],
     genre: ["Drama", "Music"],
     image_url:
@@ -43,8 +43,8 @@ const movies = [
   },
   {
     actors: ["Tom Hardy", "Nick Nolte", "Joel Edgerton"],
-    desc: "The youngest son of an alcoholic former boxer returns home, where he\u0026apos;s trained by his father for competition in a mixed martial arts tournament - a path that puts the fighter on a collision course with his estranged, older brother.",
-    directors: ["Gavin O\u0026apos;Connor"],
+    desc: "The youngest son of an alcoholic former boxer returns home, where he's trained by his father for competition in a mixed martial arts tournament - a path that puts the fighter on a collision course with his estranged, older brother.",
+    directors: ["Gavin O'Connor"],
     genre: ["Action", "Drama", "Sport"],
     image_url:
       "https://m.media-amazon.com/images/M/MV5BMTk4ODk5MTMyNV5BMl5BanBnXkFtZTcwMDMyNTg0Ng@@._V1_.jpg",
@@ -85,7 +85,7 @@ const movies = [
   },
   {
     actors: ["Hugo Weaving", "Natalie Portman", "Rupert Graves"],
-    desc: "In a future British dystopian society, a shadowy freedom fighter, known only by the alias of \u0026quot;V\u0026quot;, plots to overthrow the tyrannical government - with the help of a young woman.",
+    desc: 'In a future British dystopian society, a shadowy freedom fighter, known only by the alias of "V", plots to overthrow the tyrannical government - with the help of a young woman.',
     directors: ["James McTeigue"],
     genre: ["Action", "Drama", "Sci-Fi"],
     image_url:
@@ -113,7 +113,7 @@ const movies = [
   },
   {
     actors: ["Clint Eastwood", "Gene Hackman", "Morgan Freeman"],
-    desc: "Retired Old West gunslinger William Munny reluctantly takes on one last job, with the help of his old partner Ned Logan and a young man, The \u0026quot;Schofield Kid.\u0026quot;",
+    desc: 'Retired Old West gunslinger William Munny reluctantly takes on one last job, with the help of his old partner Ned Logan and a young man, The "Schofield Kid."',
     directors: ["Clint Eastwood"],
     genre: ["Drama", "Western"],
     image_url:
@@ -155,7 +155,7 @@ const movies = [
   },
   {
     actors: ["Tom Hanks", "Tim Allen", "Joan Cusack"],
-    desc: "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it\u0026apos;s up to Woody to convince the other toys that they weren\u0026apos;t abandoned and to return home.",
+    desc: "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.",
     directors: ["Lee Unkrich"],
     genre: ["Animation", "Adventure", "Comedy"],
     image_url:
@@ -169,7 +169,7 @@ const movies = [
   },
   {
     actors: ["Tom Hanks", "Tim Allen", "Don Rickles"],
-    desc: "A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy\u0026apos;s bedroom.",
+    desc: "A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy's bedroom.",
     directors: ["John Lasseter"],
     genre: ["Animation", "Adventure", "Comedy"],
     image_url:
@@ -183,7 +183,7 @@ const movies = [
   },
   {
     actors: ["Tom Cruise", "Jennifer Connelly", "Miles Teller"],
-    desc: "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN\u0026apos;s elite graduates on a mission that demands the ultimate sacrifice from those chosen to ...",
+    desc: "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to ...",
     directors: ["Joseph Kosinski"],
     genre: ["Action", "Drama"],
     image_url:
@@ -225,7 +225,7 @@ const movies = [
   },
   {
     actors: ["Carole Lombard", "Jack Benny", "Robert Stack"],
-    desc: "During the Nazi occupation of Poland, an acting troupe becomes embroiled in a Polish soldier\u0026apos;s efforts to track down a German spy.",
+    desc: "During the Nazi occupation of Poland, an acting troupe becomes embroiled in a Polish soldier's efforts to track down a German spy.",
     directors: ["Ernst Lubitsch"],
     genre: ["Comedy", "Romance", "War"],
     image_url:
@@ -239,7 +239,7 @@ const movies = [
   },
   {
     actors: ["Frances McDormand", "Woody Harrelson", "Sam Rockwell"],
-    desc: "A mother personally challenges the local authorities to solve her daughter\u0026apos;s murder when they fail to catch the culprit.",
+    desc: "A mother personally challenges the local authorities to solve her daughter's murder when they fail to catch the culprit.",
     directors: ["Martin McDonagh"],
     genre: ["Comedy", "Crime", "Drama"],
     image_url:
@@ -365,7 +365,7 @@ const movies = [
   },
   {
     actors: ["Arnold Schwarzenegger", "Linda Hamilton", "Michael Biehn"],
-    desc: "A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity\u0026apos;s future salvat...",
+    desc: "A human soldier is sent from 2029 to 1984 to stop an almost indestructible cyborg killing machine, sent from the same year, which has been programmed to execute a young woman whose unborn son is the key to humanity's future salvat...",
     directors: ["James Cameron"],
     genre: ["Action", "Sci-Fi"],
     image_url:
@@ -505,7 +505,7 @@ const movies = [
   },
   {
     actors: ["Elijah Wood", "Ian McKellen", "Viggo Mortensen"],
-    desc: "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron\u0026apos;s new ally, Saruman, and his hordes of Isengard.",
+    desc: "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
     directors: ["Peter Jackson"],
     genre: ["Action", "Adventure", "Drama"],
     image_url:
@@ -519,7 +519,7 @@ const movies = [
   },
   {
     actors: ["Elijah Wood", "Viggo Mortensen", "Ian McKellen"],
-    desc: "Gandalf and Aragorn lead the World of Men against Sauron\u0026apos;s army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+    desc: "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
     directors: ["Peter Jackson"],
     genre: ["Action", "Adventure", "Drama"],
     image_url:
@@ -528,7 +528,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0167260/",
     name: "The Lord of the Rings: The Return of the King",
-    rating: 9.0,
+    rating: 9,
     year: 2003,
   },
   {
@@ -598,12 +598,12 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTY5OTU0OTc2NV5BMl5BanBnXkFtZTcwMzU4MDcyMQ@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0317705/",
     name: "The Incredibles",
-    rating: 8.0,
+    rating: 8,
     year: 2004,
   },
   {
     actors: ["Viola Davis", "Emma Stone", "Octavia Spencer"],
-    desc: "An aspiring author during the civil rights movement of the 1960s decides to write a book detailing the African American maids\u0026apos; point of view on the white families for which they work, and the hardships they go through on a daily b...",
+    desc: "An aspiring author during the civil rights movement of the 1960s decides to write a book detailing the African American maids' point of view on the white families for which they work, and the hardships they go through on a daily b...",
     directors: ["Tate Taylor"],
     genre: ["Drama"],
     image_url:
@@ -645,7 +645,7 @@ const movies = [
   },
   {
     actors: ["Charles Chaplin", "Paulette Goddard", "Jack Oakie"],
-    desc: "Dictator Adenoid Hynkel tries to expand his empire while a poor Jewish barber tries to avoid persecution from Hynkel\u0026apos;s regime.",
+    desc: "Dictator Adenoid Hynkel tries to expand his empire while a poor Jewish barber tries to avoid persecution from Hynkel's regime.",
     directors: ["Charles Chaplin"],
     genre: ["Comedy", "Drama", "War"],
     image_url:
@@ -673,7 +673,7 @@ const movies = [
   },
   {
     actors: ["Ralph Fiennes", "F. Murray Abraham", "Mathieu Amalric"],
-    desc: "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel\u0026apos;s glorious years under an exceptional concierge.",
+    desc: "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.",
     directors: ["Wes Anderson"],
     genre: ["Adventure", "Comedy", "Crime"],
     image_url:
@@ -710,7 +710,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0071562/",
     name: "The Godfather Part II",
-    rating: 9.0,
+    rating: 9,
     year: 1974,
   },
   {
@@ -827,7 +827,7 @@ const movies = [
   },
   {
     actors: ["Christian Bale", "Tom Hardy", "Anne Hathaway"],
-    desc: "Eight years after the Joker\u0026apos;s reign of anarchy, Batman, with the help of the enigmatic Selina Kyle, is forced from his exile to save Gotham City from the brutal guerrilla terrorist Bane.",
+    desc: "Eight years after the Joker's reign of anarchy, Batman, with the help of the enigmatic Selina Kyle, is forced from his exile to save Gotham City from the brutal guerrilla terrorist Bane.",
     directors: ["Christopher Nolan"],
     genre: ["Action", "Drama"],
     image_url:
@@ -850,7 +850,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0468569/",
     name: "The Dark Knight",
-    rating: 9.0,
+    rating: 9,
     year: 2008,
   },
   {
@@ -869,7 +869,7 @@ const movies = [
   },
   {
     actors: ["Jeff Bridges", "John Goodman", "Julianne Moore"],
-    desc: "Ultimate L.A. slacker Jeff \u0026quot;The Dude\u0026quot; Lebowski, mistaken for a millionaire of the same name, seeks restitution for a rug ruined by debt collectors, enlisting his bowling buddies for help while trying to find the millionaire\u0026apos;s miss...",
+    desc: 'Ultimate L.A. slacker Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for a rug ruined by debt collectors, enlisting his bowling buddies for help while trying to find the millionaire\'s miss...',
     directors: ["Joel Coen", "Ethan Coen"],
     genre: ["Comedy", "Crime"],
     image_url:
@@ -925,7 +925,7 @@ const movies = [
   },
   {
     actors: ["Toshirô Mifune", "Yutaka Sada", "Tatsuya Nakadai"],
-    desc: "An executive of a Yokohama shoe company becomes a victim of extortion when his chauffeur\u0026apos;s son is kidnapped by mistake and held for ransom.",
+    desc: "An executive of a Yokohama shoe company becomes a victim of extortion when his chauffeur's son is kidnapped by mistake and held for ransom.",
     directors: ["Akira Kurosawa"],
     genre: ["Crime", "Drama", "Mystery"],
     image_url:
@@ -981,7 +981,7 @@ const movies = [
   },
   {
     actors: ["Mark Hamill", "Harrison Ford", "Carrie Fisher"],
-    desc: "After a daring mission to rescue Han Solo from Jabba the Hutt, the Rebels dispatch to Endor to destroy the second Death Star. Meanwhile, Luke struggles to help Darth Vader back from the dark side without falling into the Emperor\u0026apos;s...",
+    desc: "After a daring mission to rescue Han Solo from Jabba the Hutt, the Rebels dispatch to Endor to destroy the second Death Star. Meanwhile, Luke struggles to help Darth Vader back from the dark side without falling into the Emperor's...",
     directors: ["Richard Marquand"],
     genre: ["Action", "Adventure", "Fantasy"],
     image_url:
@@ -995,7 +995,7 @@ const movies = [
   },
   {
     actors: ["Mark Hamill", "Harrison Ford", "Carrie Fisher"],
-    desc: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire\u0026apos;s world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ...",
+    desc: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ...",
     directors: ["George Lucas"],
     genre: ["Action", "Adventure", "Fantasy"],
     image_url:
@@ -1037,7 +1037,7 @@ const movies = [
   },
   {
     actors: ["Tom Holland", "Zendaya", "Benedict Cumberbatch"],
-    desc: "With Spider-Man\u0026apos;s identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+    desc: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
     directors: ["Jon Watts"],
     genre: ["Action", "Adventure", "Fantasy"],
     image_url:
@@ -1106,7 +1106,7 @@ const movies = [
     year: 1959,
   },
   {
-    actors: ["Gene Kelly", "Donald O\u0026apos;Connor", "Debbie Reynolds"],
+    actors: ["Gene Kelly", "Donald O'Connor", "Debbie Reynolds"],
     desc: "A silent film star falls for a chorus girl just as he and his delusionally jealous screen partner are trying to make the difficult transition to talking pictures in 1920s Hollywood.",
     directors: ["Stanley Donen", "Gene Kelly"],
     genre: ["Comedy", "Musical", "Romance"],
@@ -1115,7 +1115,7 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BZDRjNGViMjQtOThlMi00MTA3LThkYzQtNzJkYjBkMGE0YzE1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0045152/",
-    name: "Singin\u0026apos; in the Rain",
+    name: "Singin' in the Rain",
     rating: 8.3,
     year: 1952,
   },
@@ -1149,7 +1149,7 @@ const movies = [
   },
   {
     actors: ["Buster Keaton", "Kathryn McGuire", "Joe Keaton"],
-    desc: "A film projectionist longs to be a detective, and puts his meagre skills to work when he is framed by a rival for stealing his girlfriend\u0026apos;s father\u0026apos;s pocketwatch.",
+    desc: "A film projectionist longs to be a detective, and puts his meagre skills to work when he is framed by a rival for stealing his girlfriend's father's pocketwatch.",
     directors: ["Buster Keaton"],
     genre: ["Action", "Comedy", "Romance"],
     image_url:
@@ -1163,7 +1163,7 @@ const movies = [
   },
   {
     actors: ["Tatsuya Nakadai", "Akira Ishihama", "Shima Iwashita"],
-    desc: "When a ronin requesting seppuku at a feudal lord\u0026apos;s palace is told of the brutal suicide of another ronin who previously visited, he reveals how their pasts are intertwined - and in doing so challenges the clan\u0026apos;s integrity.",
+    desc: "When a ronin requesting seppuku at a feudal lord's palace is told of the brutal suicide of another ronin who previously visited, he reveals how their pasts are intertwined - and in doing so challenges the clan's integrity.",
     directors: ["Masaki Kobayashi"],
     genre: ["Action", "Drama", "Mystery"],
     image_url:
@@ -1177,7 +1177,7 @@ const movies = [
   },
   {
     actors: ["Daveigh Chase", "Suzanne Pleshette", "Miyu Irino"],
-    desc: "During her family\u0026apos;s move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+    desc: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
     directors: ["Hayao Miyazaki"],
     genre: ["Animation", "Adventure", "Family"],
     image_url:
@@ -1213,8 +1213,8 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0108052/",
-    name: "Schindler\u0026apos;s List",
-    rating: 9.0,
+    name: "Schindler's List",
+    rating: 9,
     year: 1994,
   },
   {
@@ -1345,7 +1345,7 @@ const movies = [
   },
   {
     actors: ["Laurence Olivier", "Joan Fontaine", "George Sanders"],
-    desc: "A self-conscious woman juggles adjusting to her new role as an aristocrat\u0026apos;s wife and avoiding being intimidated by his first wife\u0026apos;s spectral presence.",
+    desc: "A self-conscious woman juggles adjusting to her new role as an aristocrat's wife and avoiding being intimidated by his first wife's spectral presence.",
     directors: ["Alfred Hitchcock"],
     genre: ["Drama", "Film-Noir", "Mystery"],
     image_url:
@@ -1387,7 +1387,7 @@ const movies = [
   },
   {
     actors: ["Toshirô Mifune", "Machiko Kyô", "Masayuki Mori"],
-    desc: "The rape of a bride and the murder of her samurai husband are recalled from the perspectives of a bandit, the bride, the samurai\u0026apos;s ghost and a woodcutter.",
+    desc: "The rape of a bride and the murder of her samurai husband are recalled from the perspectives of a bandit, the bride, the samurai's ghost and a woodcutter.",
     directors: ["Akira Kurosawa"],
     genre: ["Crime", "Drama", "Mystery"],
     image_url:
@@ -1457,7 +1457,7 @@ const movies = [
   },
   {
     actors: ["Anthony Perkins", "Janet Leigh", "Vera Miles"],
-    desc: "A Phoenix secretary embezzles $40,000 from her employer\u0026apos;s client, goes on the run and checks into a remote motel run by a young man under the domination of his mother.",
+    desc: "A Phoenix secretary embezzles $40,000 from her employer's client, goes on the run and checks into a remote motel run by a young man under the domination of his mother.",
     directors: ["Alfred Hitchcock"],
     genre: ["Horror", "Mystery", "Thriller"],
     image_url:
@@ -1471,7 +1471,7 @@ const movies = [
   },
   {
     actors: ["Hugh Jackman", "Jake Gyllenhaal", "Viola Davis"],
-    desc: "When Keller Dover\u0026apos;s daughter and her friend go missing, he takes matters into his own hands as the police pursue multiple leads and the pressure mounts.",
+    desc: "When Keller Dover's daughter and her friend go missing, he takes matters into his own hands as the police pursue multiple leads and the pressure mounts.",
     directors: ["Denis Villeneuve"],
     genre: ["Crime", "Drama", "Mystery"],
     image_url:
@@ -1499,7 +1499,7 @@ const movies = [
   },
   {
     actors: ["Johnny Depp", "Geoffrey Rush", "Orlando Bloom"],
-    desc: "Blacksmith Will Turner teams up with eccentric pirate \u0026quot;Captain\u0026quot; Jack Sparrow to save his love, the governor\u0026apos;s daughter, from Jack\u0026apos;s former pirate allies, who are now undead.",
+    desc: "Blacksmith Will Turner teams up with eccentric pirate \"Captain\" Jack Sparrow to save his love, the governor's daughter, from Jack's former pirate allies, who are now undead.",
     directors: ["Gore Verbinski"],
     genre: ["Action", "Adventure", "Fantasy"],
     image_url:
@@ -1577,7 +1577,7 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0073486/",
-    name: "One Flew Over the Cuckoo\u0026apos;s Nest",
+    name: "One Flew Over the Cuckoo's Nest",
     rating: 8.7,
     year: 1975,
   },
@@ -1597,7 +1597,7 @@ const movies = [
   },
   {
     actors: ["Marlon Brando", "Karl Malden", "Lee J. Cobb"],
-    desc: "An ex-prize fighter turned New Jersey longshoreman struggles to stand up to his corrupt union bosses, including his older brother, as he starts to connect with the grieving sister of one of the syndicate\u0026apos;s victims.",
+    desc: "An ex-prize fighter turned New Jersey longshoreman struggles to stand up to his corrupt union bosses, including his older brother, as he starts to connect with the grieving sister of one of the syndicate's victims.",
     directors: ["Elia Kazan"],
     genre: ["Crime", "Drama", "Thriller"],
     image_url:
@@ -1625,7 +1625,7 @@ const movies = [
   },
   {
     actors: ["Philippe Noiret", "Enzo Cannavale", "Antonella Attili"],
-    desc: "A filmmaker recalls his childhood when falling in love with the pictures at the cinema of his home village and forms a deep friendship with the cinema\u0026apos;s projectionist.",
+    desc: "A filmmaker recalls his childhood when falling in love with the pictures at the cinema of his home village and forms a deep friendship with the cinema's projectionist.",
     directors: ["Giuseppe Tornatore"],
     genre: ["Drama", "Romance"],
     image_url:
@@ -1667,7 +1667,7 @@ const movies = [
   },
   {
     actors: ["Faye Dunaway", "William Holden", "Peter Finch"],
-    desc: "A television network cynically exploits a deranged former anchor\u0026apos;s ravings and revelations about the news media for its own profit, but finds that his message may be difficult to control.",
+    desc: "A television network cynically exploits a deranged former anchor's ravings and revelations about the news media for its own profit, but finds that his message may be difficult to control.",
     directors: ["Sidney Lumet"],
     genre: ["Drama"],
     image_url:
@@ -1723,7 +1723,7 @@ const movies = [
   },
   {
     actors: ["Yôji Matsuda", "Yuriko Ishida", "Yûko Tanaka"],
-    desc: "On a journey to find the cure for a Tatarigami\u0026apos;s curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime.",
+    desc: "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime.",
     directors: ["Hayao Miyazaki"],
     genre: ["Animation", "Action", "Adventure"],
     image_url:
@@ -1765,7 +1765,7 @@ const movies = [
   },
   {
     actors: ["Brigitte Helm", "Alfred Abel", "Gustav Fröhlich"],
-    desc: "In a futuristic city sharply divided between the working class and the city planners, the son of the city\u0026apos;s mastermind falls in love with a working-class prophet who predicts the coming of a savior to mediate their differences.",
+    desc: "In a futuristic city sharply divided between the working class and the city planners, the son of the city's mastermind falls in love with a working-class prophet who predicts the coming of a savior to mediate their differences.",
     directors: ["Fritz Lang"],
     genre: ["Drama", "Sci-Fi"],
     image_url:
@@ -1779,7 +1779,7 @@ const movies = [
   },
   {
     actors: ["Guy Pearce", "Carrie-Anne Moss", "Joe Pantoliano"],
-    desc: "A man with short-term memory loss attempts to track down his wife\u0026apos;s murderer.",
+    desc: "A man with short-term memory loss attempts to track down his wife's murderer.",
     directors: ["Christopher Nolan"],
     genre: ["Mystery", "Thriller"],
     image_url:
@@ -1835,7 +1835,7 @@ const movies = [
   },
   {
     actors: ["Jean Reno", "Gary Oldman", "Natalie Portman"],
-    desc: "12-year-old Mathilda is reluctantly taken in by Léon, a professional assassin, after her family is murdered. An unusual relationship forms as she becomes his protégée and learns the assassin\u0026apos;s trade.",
+    desc: "12-year-old Mathilda is reluctantly taken in by Léon, a professional assassin, after her family is murdered. An unusual relationship forms as she becomes his protégée and learns the assassin's trade.",
     directors: ["Luc Besson"],
     genre: ["Action", "Crime", "Drama"],
     image_url:
@@ -1886,7 +1886,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMDA1ZWI4ZDItOTRlYi00OTUxLWFlNWQtMzM5NDI0YjA4ZGI2XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0079470/",
     name: "Life of Brian",
-    rating: 8.0,
+    rating: 8,
     year: 1979,
   },
   {
@@ -1927,12 +1927,12 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BNDg4NjM1YjMtYmNhZC00MjM0LWFiZmYtNGY1YjA3MzZmODc5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0211915/",
-    name: "Le fabuleux destin d\u0026apos;Amélie Poulain",
+    name: "Le fabuleux destin d'Amélie Poulain",
     rating: 8.3,
     year: 2002,
   },
   {
-    actors: ["Peter O\u0026apos;Toole", "Alec Guinness", "Anthony Quinn"],
+    actors: ["Peter O'Toole", "Alec Guinness", "Anthony Quinn"],
     desc: "The story of T.E. Lawrence, the English officer who successfully united and led the diverse, often warring, Arab tribes during World War I in order to fight the Turks.",
     directors: ["David Lean"],
     genre: ["Adventure", "Biography", "Drama"],
@@ -1947,7 +1947,7 @@ const movies = [
   },
   {
     actors: ["Lamberto Maggiorani", "Enzo Staiola", "Lianella Carell"],
-    desc: "In post-war Italy, a working-class man\u0026apos;s bicycle is stolen, endangering his efforts to find work. He and his son set out to find it.",
+    desc: "In post-war Italy, a working-class man's bicycle is stolen, endangering his efforts to find work. He and his son set out to find it.",
     directors: ["Vittorio De Sica"],
     genre: ["Drama"],
     image_url:
@@ -1975,7 +1975,7 @@ const movies = [
   },
   {
     actors: ["Maria Falconetti", "Eugene Silvain", "André Berley"],
-    desc: "In 1431, Jeanne d\u0026apos;Arc is placed on trial on charges of heresy. The ecclesiastical jurists attempt to force Jeanne to recant her claims of holy visions.",
+    desc: "In 1431, Jeanne d'Arc is placed on trial on charges of heresy. The ecclesiastical jurists attempt to force Jeanne to recant her claims of holy visions.",
     directors: ["Carl Theodor Dreyer"],
     genre: ["Biography", "Drama", "History"],
     image_url:
@@ -1983,7 +1983,7 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BNjBjNDJiYTUtOWY0OS00OGVmLTg2YzctMTE0NzVhODM1ZWJmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0019254/",
-    name: "La passion de Jeanne d\u0026apos;Arc",
+    name: "La passion de Jeanne d'Arc",
     rating: 8.2,
     year: 1928,
   },
@@ -2031,7 +2031,7 @@ const movies = [
   },
   {
     actors: ["Jason Schwartzman", "J.K. Simmons", "Rashida Jones"],
-    desc: "A simple act of kindness always sparks another, even in a frozen, faraway place. When Smeerensburg\u0026apos;s new postman, Jesper, befriends toymaker Klaus, their gifts melt an age-old feud and deliver a sleigh full of holiday traditions.",
+    desc: "A simple act of kindness always sparks another, even in a frozen, faraway place. When Smeerensburg's new postman, Jesper, befriends toymaker Klaus, their gifts melt an age-old feud and deliver a sleigh full of holiday traditions.",
     directors: ["Sergio Pablos", "Carlos Martínez López"],
     genre: ["Animation", "Adventure", "Comedy"],
     image_url:
@@ -2073,7 +2073,7 @@ const movies = [
   },
   {
     actors: ["Sam Neill", "Laura Dern", "Jeff Goldblum"],
-    desc: "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park\u0026apos;s cloned dinosaurs to run loose.",
+    desc: "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.",
     directors: ["Steven Spielberg"],
     genre: ["Action", "Adventure", "Sci-Fi"],
     image_url:
@@ -2115,7 +2115,7 @@ const movies = [
   },
   {
     actors: ["Payman Maadi", "Leila Hatami", "Sareh Bayat"],
-    desc: "A married couple are faced with a difficult decision - to improve the life of their child by moving to another country or to stay in Iran and look after a deteriorating parent who has Alzheimer\u0026apos;s disease.",
+    desc: "A married couple are faced with a difficult decision - to improve the life of their child by moving to another country or to stay in Iran and look after a deteriorating parent who has Alzheimer's disease.",
     directors: ["Asghar Farhadi"],
     genre: ["Drama"],
     image_url:
@@ -2129,7 +2129,7 @@ const movies = [
   },
   {
     actors: ["Roy Scheider", "Robert Shaw", "Richard Dreyfuss"],
-    desc: "When a killer shark unleashes chaos on a beach community off Cape Cod, it\u0026apos;s up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+    desc: "When a killer shark unleashes chaos on a beach community off Cape Cod, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
     directors: ["Steven Spielberg"],
     genre: ["Adventure", "Thriller"],
     image_url:
@@ -2157,7 +2157,7 @@ const movies = [
   },
   {
     actors: ["Mads Mikkelsen", "Thomas Bo Larsen", "Annika Wedderkopp"],
-    desc: "A teacher lives a lonely life, all the while struggling over his son\u0026apos;s custody. His life slowly gets better as he finds love and receives good news from his son, but his new luck is about to be brutally shattered by an innocent li...",
+    desc: "A teacher lives a lonely life, all the while struggling over his son's custody. His life slowly gets better as he finds love and receives good news from his son, but his new luck is about to be brutally shattered by an innocent li...",
     directors: ["Thomas Vinterberg"],
     genre: ["Drama"],
     image_url:
@@ -2179,7 +2179,7 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BZjc4NDZhZWMtNGEzYS00ZWU2LThlM2ItNTA0YzQ0OTExMTE2XkEyXkFqcGdeQXVyNjUwMzI2NzU@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0038650/",
-    name: "It\u0026apos;s a Wonderful Life",
+    name: "It's a Wonderful Life",
     rating: 8.6,
     year: 1947,
   },
@@ -2227,7 +2227,7 @@ const movies = [
   },
   {
     actors: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
-    desc: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity\u0026apos;s survival.",
+    desc: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
     directors: ["Christopher Nolan"],
     genre: ["Adventure", "Drama", "Sci-Fi"],
     image_url:
@@ -2255,7 +2255,7 @@ const movies = [
   },
   {
     actors: ["Brad Pitt", "Diane Kruger", "Eli Roth"],
-    desc: "In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner\u0026apos;s vengeful plans for the same.",
+    desc: "In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.",
     directors: ["Quentin Tarantino"],
     genre: ["Adventure", "Drama", "War"],
     image_url:
@@ -2269,7 +2269,7 @@ const movies = [
   },
   {
     actors: ["Harrison Ford", "Sean Connery", "Alison Doody"],
-    desc: "In 1938, after his father Professor Henry Jones, Sr. goes missing while pursuing the Holy Grail, Professor Henry \u0026quot;Indiana\u0026quot; Jones, Jr. finds himself up against Adolf Hitler\u0026apos;s Nazis again to stop them from obtaining its powers.",
+    desc: 'In 1938, after his father Professor Henry Jones, Sr. goes missing while pursuing the Holy Grail, Professor Henry "Indiana" Jones, Jr. finds himself up against Adolf Hitler\'s Nazis again to stop them from obtaining its powers.',
     directors: ["Steven Spielberg"],
     genre: ["Action", "Adventure"],
     image_url:
@@ -2297,7 +2297,7 @@ const movies = [
   },
   {
     actors: ["Lubna Azabal", "Mélissa Désormeaux-Poulin", "Maxim Gaudette"],
-    desc: "Twins journey to the Middle East to discover their family history and fulfill their mother\u0026apos;s last wishes.",
+    desc: "Twins journey to the Middle East to discover their family history and fulfill their mother's last wishes.",
     directors: ["Denis Villeneuve"],
     genre: ["Drama", "Mystery"],
     image_url:
@@ -2311,7 +2311,7 @@ const movies = [
   },
   {
     actors: ["Daniel Day-Lewis", "Pete Postlethwaite", "Alison Crosbie"],
-    desc: "A man\u0026apos;s coerced confession to an I.R.A. bombing he did not commit results in the imprisonment of his father as well. An English lawyer fights to free them.",
+    desc: "A man's coerced confession to an I.R.A. bombing he did not commit results in the imprisonment of his father as well. An English lawyer fights to free them.",
     directors: ["Jim Sheridan"],
     genre: ["Biography", "Crime", "Drama"],
     image_url:
@@ -2338,7 +2338,7 @@ const movies = [
     year: 1967,
   },
   {
-    actors: ["Takashi Shimura", "Nobuo Kaneko", "Shin\u0026apos;ichi Himori"],
+    actors: ["Takashi Shimura", "Nobuo Kaneko", "Shin'ichi Himori"],
     desc: "A bureaucrat tries to find meaning in his life after he discovers he has terminal cancer.",
     directors: ["Akira Kurosawa"],
     genre: ["Drama"],
@@ -2437,7 +2437,7 @@ const movies = [
   },
   {
     actors: ["Daniel Radcliffe", "Emma Watson", "Rupert Grint"],
-    desc: "Harry, Ron, and Hermione search for Voldemort\u0026apos;s remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+    desc: "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
     directors: ["David Yates"],
     genre: ["Adventure", "Family", "Fantasy"],
     image_url:
@@ -2451,7 +2451,7 @@ const movies = [
   },
   {
     actors: ["Lin-Manuel Miranda", "Phillipa Soo", "Leslie Odom Jr."],
-    desc: "The real life of one of America\u0026apos;s foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast.",
+    desc: "The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast.",
     directors: ["Thomas Kail"],
     genre: ["Biography", "Drama", "History"],
     image_url:
@@ -2487,7 +2487,7 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BNzE4NDg5OWMtMzg3NC00ZDRjLTllMDMtZTRjNWZmNjBmMGZlXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt1028532/",
-    name: "Hachi: A Dog\u0026apos;s Tale",
+    name: "Hachi: A Dog's Tale",
     rating: 8.1,
     year: 2010,
   },
@@ -2521,7 +2521,7 @@ const movies = [
   },
   {
     actors: ["Clint Eastwood", "Bee Vang", "Christopher Carley"],
-    desc: "Disgruntled Korean War veteran Walt Kowalski sets out to reform his neighbor, Thao Lor, a Hmong teenager who tried to steal Kowalski\u0026apos;s prized possession: a 1972 Gran Torino.",
+    desc: "Disgruntled Korean War veteran Walt Kowalski sets out to reform his neighbor, Thao Lor, a Hmong teenager who tried to steal Kowalski's prized possession: a 1972 Gran Torino.",
     directors: ["Clint Eastwood"],
     genre: ["Drama"],
     image_url:
@@ -2577,7 +2577,7 @@ const movies = [
   },
   {
     actors: ["Ben Affleck", "Rosamund Pike", "Neil Patrick Harris"],
-    desc: "With his wife\u0026apos;s disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it\u0026apos;s suspected that he may not be innocent.",
+    desc: "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
     directors: ["David Fincher"],
     genre: ["Drama", "Mystery", "Thriller"],
     image_url:
@@ -2632,7 +2632,7 @@ const movies = [
     year: 1983,
   },
   {
-    actors: ["Matthew Modine", "R. Lee Ermey", "Vincent D\u0026apos;Onofrio"],
+    actors: ["Matthew Modine", "R. Lee Ermey", "Vincent D'Onofrio"],
     desc: "A pragmatic U.S. Marine observes the dehumanizing effects the Vietnam War has on his fellow recruits from their brutal boot camp training to the bloody street fighting in Hue.",
     directors: ["Stanley Kubrick"],
     genre: ["Drama", "War"],
@@ -2703,7 +2703,7 @@ const movies = [
   },
   {
     actors: ["William H. Macy", "Frances McDormand", "Steve Buscemi"],
-    desc: "Minnesota car salesman Jerry Lundegaard\u0026apos;s inept crime falls apart due to his and his henchmen\u0026apos;s bungling and the persistent police work of the quite pregnant Marge Gunderson.",
+    desc: "Minnesota car salesman Jerry Lundegaard's inept crime falls apart due to his and his henchmen's bungling and the persistent police work of the quite pregnant Marge Gunderson.",
     directors: ["Joel Coen", "Ethan Coen"],
     genre: ["Crime", "Thriller"],
     image_url:
@@ -2871,7 +2871,7 @@ const movies = [
   },
   {
     actors: ["Bruno Ganz", "Alexandra Maria Lara", "Ulrich Matthes"],
-    desc: "Traudl Junge, the final secretary for Adolf Hitler, tells of the Nazi dictator\u0026apos;s final days in his Berlin bunker at the end of WWII.",
+    desc: "Traudl Junge, the final secretary for Adolf Hitler, tells of the Nazi dictator's final days in his Berlin bunker at the end of WWII.",
     directors: ["Oliver Hirschbiegel"],
     genre: ["Biography", "Drama", "History"],
     image_url:
@@ -2955,7 +2955,7 @@ const movies = [
   },
   {
     actors: ["Anthony Gonzalez", "Gael García Bernal", "Benjamin Bratt"],
-    desc: "Aspiring musician Miguel, confronted with his family\u0026apos;s ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+    desc: "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
     directors: ["Lee Unkrich", "Adrian Molina"],
     genre: ["Animation", "Adventure", "Comedy"],
     image_url:
@@ -2983,7 +2983,7 @@ const movies = [
   },
   {
     actors: ["Orson Welles", "Joseph Cotten", "Dorothy Comingore"],
-    desc: "Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance: \u0026apos;Rosebud.\u0026apos;",
+    desc: "Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance: 'Rosebud.'",
     directors: ["Orson Welles"],
     genre: ["Drama", "Mystery"],
     image_url:
@@ -2997,7 +2997,7 @@ const movies = [
   },
   {
     actors: ["Alexandre Rodrigues", "Leandro Firmino", "Matheus Nachtergaele"],
-    desc: "In the slums of Rio, two kids\u0026apos; paths diverge as one struggles to become a photographer and the other a kingpin.",
+    desc: "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
     directors: ["Fernando Meirelles", "Kátia Lund"],
     genre: ["Crime", "Drama"],
     image_url:
@@ -3093,7 +3093,7 @@ const movies = [
     thumb_url:
       "https://m.media-amazon.com/images/M/MV5BODQ3NDExOGYtMzI3Mi00NWRlLTkwNjAtNjc4MDgzZGJiZTA1XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0064116/",
-    name: "C\u0026apos;era una volta il West",
+    name: "C'era una volta il West",
     rating: 8.5,
     year: 1969,
   },
@@ -3141,7 +3141,7 @@ const movies = [
   },
   {
     actors: ["Ethan Hawke", "Julie Delpy", "Vernon Dobtcheff"],
-    desc: "Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse\u0026apos;s book tour.",
+    desc: "Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse's book tour.",
     directors: ["Richard Linklater"],
     genre: ["Drama", "Romance"],
     image_url:
@@ -3182,8 +3182,8 @@ const movies = [
     year: 2005,
   },
   {
-    actors: ["Ryan O\u0026apos;Neal", "Marisa Berenson", "Patrick Magee"],
-    desc: "An Irish rogue wins the heart of a rich widow and assumes her dead husband\u0026apos;s aristocratic position in 18th-century England.",
+    actors: ["Ryan O'Neal", "Marisa Berenson", "Patrick Magee"],
+    desc: "An Irish rogue wins the heart of a rich widow and assumes her dead husband's aristocratic position in 18th-century England.",
     directors: ["Stanley Kubrick"],
     genre: ["Adventure", "Drama", "War"],
     image_url:
@@ -3211,7 +3211,7 @@ const movies = [
   },
   {
     actors: ["Mohammad Amir Naji", "Amir Farrokh Hashemian", "Bahare Seddiqi"],
-    desc: "After a boy loses his sister\u0026apos;s pair of shoes, he goes on a series of adventures in order to find them. When he can\u0026apos;t, he tries a new way to \u0026quot;win\u0026quot; a new pair.",
+    desc: "After a boy loses his sister's pair of shoes, he goes on a series of adventures in order to find them. When he can't, he tries a new way to \"win\" a new pair.",
     directors: ["Majid Majidi"],
     genre: ["Drama", "Family", "Sport"],
     image_url:
@@ -3253,7 +3253,7 @@ const movies = [
   },
   {
     actors: ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo"],
-    desc: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\u0026apos; actions and restore balance to the universe.",
+    desc: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
     directors: ["Anthony Russo", "Joe Russo"],
     genre: ["Action", "Adventure", "Drama"],
     image_url:
@@ -3281,7 +3281,7 @@ const movies = [
   },
   {
     actors: ["Emilio Echevarría", "Gael García Bernal", "Goya Toledo"],
-    desc: "A horrific car accident connects three stories, each involving characters dealing with loss, regret, and life\u0026apos;s harsh realities, all in the name of love.",
+    desc: "A horrific car accident connects three stories, each involving characters dealing with loss, regret, and life's harsh realities, all in the name of love.",
     directors: ["Alejandro G. Iñárritu"],
     genre: ["Drama", "Thriller"],
     image_url:
@@ -3294,7 +3294,7 @@ const movies = [
     year: 2001,
   },
   {
-    actors: ["Edward Norton", "Edward Furlong", "Beverly D\u0026apos;Angelo"],
+    actors: ["Edward Norton", "Edward Furlong", "Beverly D'Angelo"],
     desc: "A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.",
     directors: ["Tony Kaye"],
     genre: ["Crime", "Drama"],
@@ -3309,7 +3309,7 @@ const movies = [
   },
   {
     actors: ["Kevin Spacey", "Annette Bening", "Thora Birch"],
-    desc: "A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter\u0026apos;s best friend.",
+    desc: "A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter's best friend.",
     directors: ["Sam Mendes"],
     genre: ["Drama"],
     image_url:
@@ -3323,7 +3323,7 @@ const movies = [
   },
   {
     actors: ["F. Murray Abraham", "Tom Hulce", "Elizabeth Berridge"],
-    desc: "The life, success and troubles of Wolfgang Amadeus Mozart, as told by Antonio Salieri, the contemporaneous composer who was deeply jealous of Mozart\u0026apos;s talent and claimed to have murdered him.",
+    desc: "The life, success and troubles of Wolfgang Amadeus Mozart, as told by Antonio Salieri, the contemporaneous composer who was deeply jealous of Mozart's talent and claimed to have murdered him.",
     directors: ["Milos Forman"],
     genre: ["Biography", "Drama", "Music"],
     image_url:
@@ -3388,7 +3388,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BY2Q2NDI1MjUtM2Q5ZS00MTFlLWJiYWEtNTZmNjQ3OGJkZDgxXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0103639/",
     name: "Aladdin",
-    rating: 8.0,
+    rating: 8,
     year: 1992,
   },
   {
@@ -3435,7 +3435,7 @@ const movies = [
   },
   {
     actors: ["Aamir Khan", "Madhavan", "Mona Singh"],
-    desc: "Two friends are searching for their long lost companion. They revisit their college days and recall the memories of their friend who inspired them to think differently, even as the rest of the world called them \u0026quot;idiots\u0026quot;.",
+    desc: 'Two friends are searching for their long lost companion. They revisit their college days and recall the memories of their friend who inspired them to think differently, even as the rest of the world called them "idiots".',
     directors: ["Rajkumar Hirani"],
     genre: ["Comedy", "Drama"],
     image_url:
@@ -3504,7 +3504,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
     imdb_url: "/title/tt0050083/",
     name: "12 Angry Men",
-    rating: 9.0,
+    rating: 9,
     year: 1957,
   },
 ];
