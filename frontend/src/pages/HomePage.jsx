@@ -25,7 +25,7 @@ const HomePage = () => {
     <Row>
         {
             movies.slice(0,40).map(movie => (
-                <Col key={movie.imdb_url} sm={12} md={6} lg={4} xl={3} className='text-center' >
+                <Col key={movie._id} sm={12} md={6} lg={4} xl={3} className='text-center' >
                     <Movie movie={movie} />
                 </Col>
             ))
