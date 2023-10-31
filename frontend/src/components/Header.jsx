@@ -1,4 +1,3 @@
-import React from 'react'
 import {Navbar, Nav, Container} from 'react-bootstrap'
 import {FaClipboardCheck} from 'react-icons/fa'
 import {MdLocalMovies} from 'react-icons/md'
