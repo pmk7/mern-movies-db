@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams, Link } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link, useNavigate} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import Loading from '../components/Loading';
+import { useGetMovieDetailsQuery } from '../slices/moviesApiSlice';
+import { addToList } from '../slices/listSlice';
+import { useDispatch } from 'react-redux';
+
 
 const MoviePage = () => {
-  const [movie, setMovies] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { id: movieId } = useParams();
 
-  const { id } = useParams();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const { data } = await axios.get(`/api/movies/${id}`);
-        setMovies(data);
-        setIsLoading(false);
-      } catch (err) {
-        setError(err);
-        setIsLoading(false);
-      }
-    };
-    fetchMovies();
-  }, [id]);
+  const {data: movie, error, isLoading} = useGetMovieDetailsQuery(movieId);
+
+  const addToListHandler = () => {
+    dispatch(addToList({...movie, movieId}));
+    navigate('/mymovies')
+  }
+
 
   return (
     <>
@@ -39,10 +35,10 @@ const MoviePage = () => {
           <Row>
             <Col md={5}>
               <Card>
-                <Card.Img src={movie.image_url} alt={movie.name} fluid />
+                <Card.Img src={movie.image_url} alt={movie.name} />
                 <Card.Body>
                   <Card.Text>{movie.desc}</Card.Text>
-                  <Button variant="primary">Add To My Movies</Button>
+                  <Button variant="primary" type='button' onClick={addToListHandler} >Add To My Movies</Button>
                 </Card.Body>
               </Card>
             </Col>

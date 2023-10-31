@@ -1,5 +1,4 @@
 import express from "express";
-import movies from "./data/movies.js";
 import dotenv from "dotenv";
 dotenv.config();
 import connectDB from "./config/db.js";

@@ -1,29 +1,13 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Row, Col, Container } from 'react-bootstrap';
 import Search from '../components/Search';
 import Movie from '../components/Movie';
 import Loading from '../components/Loading';
+import { useGetMoviesQuery } from '../slices/moviesApiSlice';
 
 const HomePage = () => {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // Used instead of axios, uses fetchAPI under the hood
+  const { data: movies, error, isLoading } = useGetMoviesQuery();
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await axios.get('/api/movies');
-        setMovies(response.data);
-        setIsLoading(false);
-      } catch (err) {
-        setError(err);
-        setIsLoading(false);
-      }
-    };
-
-    fetchMovies();
-  }, []);
 
   return (
     <>
