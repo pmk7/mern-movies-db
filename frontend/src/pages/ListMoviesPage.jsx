@@ -1,22 +1,22 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
-import Loading from '../components/Loading';
+import { removeFromList  } from '../slices/listSlice';
 
 
 
 
 const ListMoviesPage = () => {
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const list = useSelector((state) => state.list);
     const { listItems } = list;
+    console.log(listItems)
 
-    const removeFromListHandler = (id) => {
-        // dispatch(removeFromList(id));
-        navigate('/mymovies')
+    const removeFromListHandler = async (id) => {
+        console.log(id)
+        dispatch(removeFromList(id));
     }
 
     return (
@@ -41,10 +41,8 @@ const ListMoviesPage = () => {
                                         </Link> 
                                     </Col>
                                     <Col md={3}>
-                                        <Button variant="primary" type='button' >Remove</Button>
+                                        <Button variant="primary" type='button' onClick={()=> removeFromListHandler(item._id)}>Remove</Button>
                                     </Col>
-                                    
-
                                 </Row>
                             </ListGroup.Item>
                         ))}

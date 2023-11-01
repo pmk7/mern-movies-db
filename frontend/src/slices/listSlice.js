@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const updateList = (state) => {
+  localStorage.setItem("list", JSON.stringify(state));
+  return state;
+};
+
 const initialState = localStorage.getItem("list")
   ? JSON.parse(localStorage.getItem("list"))
   : { listItems: [] };
@@ -20,11 +25,17 @@ const listSlice = createSlice({
       } else {
         state.listItems = [...state.listItems, item];
       }
-      localStorage.setItem("list", JSON.stringify(state));
+      return updateList(state, item);
+    },
+    removeFromList: (state, action) => {
+      state.listItems = state.listItems.filter(
+        (listItem) => listItem._id !== action.payload
+      );
+      return updateList(state);
     },
   },
 });
 
-export const { addToList } = listSlice.actions;
+export const { addToList, removeFromList } = listSlice.actions;
 
 export default listSlice.reducer;
