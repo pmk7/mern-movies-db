@@ -20,6 +20,9 @@ const MoviePage = () => {
     navigate('/mymovies')
   }
 
+  // TODO: Disable button if movie is already in list
+ 
+
 
   return (
     <>

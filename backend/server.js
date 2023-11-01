@@ -1,9 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 dotenv.config();
 import connectDB from "./config/db.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import moviesRoutes from "./routes/moviesRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 const port = process.env.PORT || 8000;
 
@@ -11,29 +13,24 @@ connectDB(); // Connect MongoDB
 
 const app = express();
 
+// Body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Cookie parser middleware
+app.use(cookieParser());
+
 app.get("/", (req, res) => {
   res.send("Server is ready");
 });
 
+// Routes
 app.use("/api/movies", moviesRoutes);
+app.use("/api/users", userRoutes);
 
+// Error middleware
 app.use(notFound);
 app.use(errorHandler);
 
-// app.get("/api/movies", (req, res) => {
-//   res.json(movies);
-// });
-
-// app.get("/api/movies/title/:id", (req, res) => {
-//   const movie = movies.find((m) => {
-//     console.log(m.imdb_url);
-//     const urlParts = m.imdb_url.split("/");
-//     const idString = urlParts[urlParts.length - 2];
-//     const id = idString.substring(2);
-//     return id === req.params.id;
-//   });
-//   res.json(movie);
-//   console.log(req.params.id);
-// });
-
+// Start server
 app.listen(port, () => console.log(`Server is running on port ${port}`));

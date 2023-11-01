@@ -8,6 +8,7 @@ const HomePage = () => {
   // Used instead of axios, uses fetchAPI under the hood
   const { data: movies, error, isLoading } = useGetMoviesQuery();
 
+  // TODO: Implement infinite scroll
 
   return (
     <>
@@ -20,7 +21,6 @@ const HomePage = () => {
           <Container className='d-flex justify-content-center align-items-center'>
             <Search />
           </Container>
-          {/* implement infinite scroll */}
           <Row>
             {movies.slice(0, 40).map((movie) => (
               <Col key={movie._id} sm={12} md={6} lg={4} xl={3} className='text-center'>
