@@ -16,7 +16,7 @@ const Movie = ({movie}) => {
             <Card.Img src={movie.thumb_url} variant='top' onError={()=> setIsImageLoaded(false) } />
         </Link>
 
-        <Card.Body>
+        <Card.Body >
             <Link to={`/movie/${movie._id}`}>
                 <Card.Title as='div'>
                     <strong>{movie.name}</strong>
