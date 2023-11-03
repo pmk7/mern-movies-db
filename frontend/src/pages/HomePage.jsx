@@ -9,6 +9,7 @@ const HomePage = () => {
   const { data: movies, error, isLoading } = useGetMoviesQuery();
 
   // TODO: Implement infinite scroll
+  // TODO: Fix sizing and spacing of movie cards
 
   return (
     <>
@@ -23,7 +24,7 @@ const HomePage = () => {
           </Container>
           <Row>
             {movies.slice(0, 40).map((movie) => (
-              <Col key={movie._id} sm={12} md={6} lg={4} xl={2} className='text-center'>
+              <Col key={movie._id} sm={12} md={6} lg={4} xl={4} className='text-center'>
                 <Movie className='movie-title' movie={movie} />
               </Col>
             ))}

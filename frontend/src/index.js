@@ -15,6 +15,8 @@ import reportWebVitals from "./reportWebVitals";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import ListMoviesPage from "./pages/ListMoviesPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +24,8 @@ const routes = createBrowserRouter(
       <Route index={true} path="/" element={<HomePage />} />
       <Route path="/movie/:id" element={<MoviePage />} />
       <Route path="/mymovies" element={<ListMoviesPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Route>
   )
 );
