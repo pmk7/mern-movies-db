@@ -13,7 +13,7 @@ const Movie = ({movie}) => {
     <Card className='my-3 p-3'>
         {/* fix so empty card space is not visible*/}
         <Link to={`/movie/${movie._id}`}> 
-            <Card.Img src={movie.thumb_url} variant='top' onError={()=> setIsImageLoaded(false) } />
+            <Card.Img src={movie.image_url} variant='top' onError={()=> setIsImageLoaded(false) } />
         </Link>
 
         <Card.Body >

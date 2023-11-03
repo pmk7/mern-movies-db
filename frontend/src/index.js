@@ -17,15 +17,19 @@ import MoviePage from "./pages/MoviePage";
 import ListMoviesPage from "./pages/ListMoviesPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomePage />} />
       <Route path="/movie/:id" element={<MoviePage />} />
-      <Route path="/mymovies" element={<ListMoviesPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/mymovies" element={<ListMoviesPage />} />
+      </Route>
     </Route>
   )
 );
