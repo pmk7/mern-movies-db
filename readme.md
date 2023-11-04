@@ -21,12 +21,18 @@ MoviesDB is a full stack web app built using the MERN stack which allows users t
 ## Installation
 
 1. Clone the repository: `git clone pmk7/mern-movies-db`
-2. Install dependencies (frotend and backend): `npm install` `cd frontend` `npm install`
-3. Start the application (frontend: 3000 & backend: 9000): `npm run dev` # Backend only `npm run server`
+2. Install dependencies (frotend and backend): `npm install  cd frontend npm install`
+3. Start the application (frontend: 3000 & backend: 9000): `npm run dev` 
+
+# Backend only `npm run server`
 
 ## Seed Database
-1. Import data: `npm run data: import`
-2. Destroy Data: `npm run data: destroy`
+1. Import data: `node backend/seeder.js`
+2. Destroy Data: `node backend/seeder.js -d`
 
 ## Sample Login
+- Username: `fry@gmail.com`
+- Password: `ABC123`
 
+## Env file
+- Rename example.env file to .env file and add your MongoDB URI
