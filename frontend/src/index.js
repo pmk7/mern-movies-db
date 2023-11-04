@@ -18,6 +18,7 @@ import ListMoviesPage from "./pages/ListMoviesPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const routes = createBrowserRouter(
 
       <Route path="" element={<PrivateRoute />}>
         <Route path="/mymovies" element={<ListMoviesPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
     </Route>
   )

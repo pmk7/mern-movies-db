@@ -4,6 +4,7 @@ import Movie from '../components/Movie';
 import Loading from '../components/Loading';
 import { useGetMoviesQuery } from '../slices/moviesApiSlice';
 
+
 const HomePage = () => {
   // Used instead of axios, uses fetchAPI under the hood
   const { data: movies, error, isLoading } = useGetMoviesQuery();
@@ -23,8 +24,8 @@ const HomePage = () => {
             <Search />
           </Container>
           <Row>
-            {movies.slice(0, 40).map((movie) => (
-              <Col key={movie._id} sm={12} md={6} lg={4} xl={4} className='text-center'>
+            {movies.map((movie) => (
+              <Col key={movie._id} sm={12} md={6} lg={4} xl={3} className='text-center'>
                 <Movie movie={movie} />
               </Col>
             ))}

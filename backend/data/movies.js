@@ -98,20 +98,6 @@ const movies = [
     year: 2006,
   },
   {
-    actors: ["Edward Asner", "Jordan Nagai", "John Ratzenberger"],
-    desc: "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.",
-    directors: ["Pete Docter", "Bob Peterson"],
-    genre: ["Animation", "Adventure", "Comedy"],
-    image_url:
-      "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_.jpg",
-    thumb_url:
-      "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
-    imdb_url: "/title/tt1049413/",
-    name: "Up",
-    rating: 8.3,
-    year: 2009,
-  },
-  {
     actors: ["Clint Eastwood", "Gene Hackman", "Morgan Freeman"],
     desc: 'Retired Old West gunslinger William Munny reluctantly takes on one last job, with the help of his old partner Ned Logan and a young man, The "Schofield Kid."',
     directors: ["Clint Eastwood"],
@@ -866,20 +852,6 @@ const movies = [
     name: "The Bridge on the River Kwai",
     rating: 8.2,
     year: 1957,
-  },
-  {
-    actors: ["Jeff Bridges", "John Goodman", "Julianne Moore"],
-    desc: 'Ultimate L.A. slacker Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for a rug ruined by debt collectors, enlisting his bowling buddies for help while trying to find the millionaire\'s miss...',
-    directors: ["Joel Coen", "Ethan Coen"],
-    genre: ["Comedy", "Crime"],
-    image_url:
-      "https://m.media-amazon.com/images/M/MV5BMTQ0NjUzMDMyOF5BMl5BanBnXkFtZTgwODA1OTU0MDE@._V1_.jpg",
-    thumb_url:
-      "https://m.media-amazon.com/images/M/MV5BMTQ0NjUzMDMyOF5BMl5BanBnXkFtZTgwODA1OTU0MDE@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
-    imdb_url: "/title/tt0118715/",
-    name: "The Big Lebowski",
-    rating: 8.1,
-    year: 1998,
   },
   {
     actors: ["Myrna Loy", "Dana Andrews", "Fredric March"],
@@ -2338,34 +2310,6 @@ const movies = [
     year: 1967,
   },
   {
-    actors: ["Takashi Shimura", "Nobuo Kaneko", "Shin'ichi Himori"],
-    desc: "A bureaucrat tries to find meaning in his life after he discovers he has terminal cancer.",
-    directors: ["Akira Kurosawa"],
-    genre: ["Drama"],
-    image_url:
-      "https://m.media-amazon.com/images/M/MV5BZTcyYmQ2NDMtNWI1NS00MTNiLTk0NDctNWMwNWExYTNlYzk3XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg",
-    thumb_url:
-      "https://m.media-amazon.com/images/M/MV5BZTcyYmQ2NDMtNWI1NS00MTNiLTk0NDctNWMwNWExYTNlYzk3XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
-    imdb_url: "/title/tt0044741/",
-    name: "Ikiru",
-    rating: 8.3,
-    year: 1956,
-  },
-  {
-    actors: ["Aleksey Kravchenko", "Olga Mironova", "Liubomiras Laucevicius"],
-    desc: "After finding an old rifle, a young boy joins the Soviet resistance movement against ruthless German forces and experiences the horrors of World War II.",
-    directors: ["Elem Klimov"],
-    genre: ["Drama", "Thriller", "War"],
-    image_url:
-      "https://m.media-amazon.com/images/M/MV5BNzU3OTI1MjItYTJiZC00NDI0LWFlNGYtOTQ1OTVhNDgwM2U3XkEyXkFqcGdeQXVyNTc2MDU0NDE@._V1_.jpg",
-    thumb_url:
-      "https://m.media-amazon.com/images/M/MV5BNzU3OTI1MjItYTJiZC00NDI0LWFlNGYtOTQ1OTVhNDgwM2U3XkEyXkFqcGdeQXVyNTc2MDU0NDE@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
-    imdb_url: "/title/tt0091251/",
-    name: "Idi i smotri",
-    rating: 8.4,
-    year: 1985,
-  },
-  {
     actors: ["Jay Baruchel", "Gerard Butler", "Christopher Mintz-Plasse"],
     desc: "A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.",
     directors: ["Dean DeBlois", "Chris Sanders"],
@@ -2672,20 +2616,6 @@ const movies = [
     name: "Ford v Ferrari",
     rating: 8.1,
     year: 2019,
-  },
-  {
-    actors: ["Albert Brooks", "Ellen DeGeneres", "Alexander Gould"],
-    desc: "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
-    directors: ["Andrew Stanton", "Lee Unkrich"],
-    genre: ["Animation", "Adventure", "Comedy"],
-    image_url:
-      "https://m.media-amazon.com/images/M/MV5BZTAzNWZlNmUtZDEzYi00ZjA5LWIwYjEtZGM1NWE1MjE4YWRhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
-    thumb_url:
-      "https://m.media-amazon.com/images/M/MV5BZTAzNWZlNmUtZDEzYi00ZjA5LWIwYjEtZGM1NWE1MjE4YWRhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
-    imdb_url: "/title/tt0266543/",
-    name: "Finding Nemo",
-    rating: 8.2,
-    year: 2003,
   },
   {
     actors: ["Brad Pitt", "Edward Norton", "Meat Loaf"],
@@ -3376,20 +3306,6 @@ const movies = [
     name: "Alien",
     rating: 8.5,
     year: 1979,
-  },
-  {
-    actors: ["Scott Weinger", "Robin Williams", "Linda Larkin"],
-    desc: "A kindhearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.",
-    directors: ["Ron Clements", "John Musker"],
-    genre: ["Animation", "Adventure", "Comedy"],
-    image_url:
-      "https://m.media-amazon.com/images/M/MV5BY2Q2NDI1MjUtM2Q5ZS00MTFlLWJiYWEtNTZmNjQ3OGJkZDgxXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_.jpg",
-    thumb_url:
-      "https://m.media-amazon.com/images/M/MV5BY2Q2NDI1MjUtM2Q5ZS00MTFlLWJiYWEtNTZmNjQ3OGJkZDgxXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
-    imdb_url: "/title/tt0103639/",
-    name: "Aladdin",
-    rating: 8,
-    year: 1992,
   },
   {
     actors: ["Kim Min-hee", "Ha Jung-woo", "Cho Jin-woong"],

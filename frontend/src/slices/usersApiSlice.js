@@ -25,10 +25,27 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         method: "POST",
       }),
     }),
+    profile: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/profile`,
+        method: "PUT",
+        body: data,
+      }),
+      deleteProfile: builder.mutation({
+        query: () => ({
+          url: `${USERS_URL}/profile`,
+          method: "DELETE",
+        }),
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useLogoutMutation, useRegisterMutation } =
-  usersApiSlice;
+export const {
+  useLoginMutation,
+  useLogoutMutation,
+  useRegisterMutation,
+  useProfileMutation,
+} = usersApiSlice;
 
 // source: https://github.com/reduxjs/redux/blob/140e8137f3651e5631271d1e85ab64e7e4dd971f/docs/tutorials/essentials/part-8-rtk-query-advanced.md

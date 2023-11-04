@@ -1,24 +1,21 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
 
 const Movie = ({movie}) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(true)   
-  // used to extract an id from the imdb_url  
+
 
   
   return (
-    isImageLoaded && (
-    <Card className='my-3 p-3'>
-        {/* fix so empty card space is not visible*/}
-        <Link to={`/movie/${movie._id}`}> 
-            <Card.Img src={movie.image_url} variant='top' onError={()=> setIsImageLoaded(false) } />
-        </Link>
 
+    <Card className='my-3 p-1'>
+        <Link to={`/movie/${movie._id}`}> 
+            <Card.Img src={movie?.image_url} variant='top' style={{ width: '100%', height: '20rem', objectFit: 'cover' }} />
+        </Link>
         <Card.Body >
             <Link to={`/movie/${movie._id}`}>
-                <Card.Title as='div'>
+                <Card.Title as='div' style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', wordWrap: 'break-word' }}>
                     <strong>{movie.name}</strong>
                 </Card.Title>
             </Link>
@@ -30,7 +27,7 @@ const Movie = ({movie}) => {
         </Card.Body>    
     </Card>
   )
-  )
+
 }
 
 export default Movie
