@@ -30,3 +30,5 @@ export const usersApiSlice = apiSlice.injectEndpoints({
 
 export const { useLoginMutation, useLogoutMutation, useRegisterMutation } =
   usersApiSlice;
+
+// source: https://github.com/reduxjs/redux/blob/140e8137f3651e5631271d1e85ab64e7e4dd971f/docs/tutorials/essentials/part-8-rtk-query-advanced.md

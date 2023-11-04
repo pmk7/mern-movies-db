@@ -31,11 +31,10 @@ const Header = () => {
 
   const deleteAccountHandler = () => {
     console.log('delete account')
-    console.log(userInfo)
+
   }
 
   
-  console.log(listItems)
   return (
     <header>
         <Navbar bg="dark" data-bs-theme="dark" expand="lg" collapseOnSelect className='py-4'>
