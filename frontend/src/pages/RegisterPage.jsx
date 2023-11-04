@@ -8,6 +8,9 @@ import { useRegisterMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import {toast} from 'react-toastify'
 
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
+
+
 const RegisterPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -34,7 +37,11 @@ const RegisterPage = () => {
     
     const submitHandler = async (e) =>{
         e.preventDefault()
-        if (password !== confirmPassword) {
+        if (!passwordRegex.test(password)) {
+            toast.error('Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character')
+            return
+        }
+        else if (password !== confirmPassword) {
             toast.error('Passwords do not match')
             return
         } else {
