@@ -35,4 +35,4 @@ MoviesDB is a full stack web app built using the MERN stack which allows users t
 - Password: `ABC123`
 
 ## Env file
-- Rename example.env file to .env file and add your MongoDB URI
+- Rename env.example file to .env file and add your personal MongoDB URI
