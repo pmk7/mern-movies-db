@@ -4,8 +4,6 @@
 
 MoviesDB is a full stack web app built using the MERN stack which allows users to browse and search a database of movies to create and edit lists of movies they want to watch
 
-## Netlify
-
 ## Features
 
 - Register and login
@@ -22,20 +20,23 @@ MoviesDB is a full stack web app built using the MERN stack which allows users t
 
 ## Installation
 
-1. Clone the repository: `git clone pmk7/mern-movies-db`
+1. Clone the repository: `git clone https://github.com/pmk7/mern-movies-db`
 2. Install dependencies (backend & frontend): 
-`npm install` 
-`cd frontend` 
-`npm install`
-3. Start the application (frontend: 3000 & backend: 9000): `npm run dev` 
+Install backend dependencies, from root: `npm install` 
+Frontend: `cd frontend` 
+Install frontend dependencies: `npm install`
+3. Start the application (frontend: 3000 & backend: 9000) from root: `npm run dev` 
 4. Backend only `npm run server`
 
+
 ## Env file
-- Rename env.example file to .env file and add your personal MongoDB URI
+- Rename env.example file to .env file and add your personal MongoDB URI. See here for more details about to get a connection string: `https://www.mongodb.com/docs/guides/atlas/connection-string/`
 
 ## Seed Database
 1. Import data: `node backend/seeder.js`
 2. Destroy Data: `node backend/seeder.js -d`
+
+- Once the data has been seeded to your database, from the root folder in your project, run `npm run dev`
 
 ## Sample Login
 - Username: `fry@gmail.com`
