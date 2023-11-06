@@ -1,3 +1,5 @@
+// https://github.com/movie-monk-b0t/top250/blob/master/top250_min.json
+
 const movies = [
   {
     actors: ["Toshirô Mifune", "Eijirô Tôno", "Tatsuya Nakadai"],
