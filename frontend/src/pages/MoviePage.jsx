@@ -21,8 +21,6 @@ const MoviePage = () => {
   }
 
   // TODO: Disable button if movie is already in list
- 
-
 
   return (
     <>

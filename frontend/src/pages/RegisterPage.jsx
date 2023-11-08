@@ -36,6 +36,7 @@ const RegisterPage = () => {
     }, [userInfo, redirect, navigate])
     
     const submitHandler = async (e) =>{
+        // checking to make sure password meets requirements
         e.preventDefault()
         if (!passwordRegex.test(password)) {
             toast.error('Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character')
@@ -72,6 +73,7 @@ const RegisterPage = () => {
                 </Form.Group> 
                 <Form.Group controlId='password' className="my-3">
                     <Form.Label>Password</Form.Label>
+                       {/* Form with input type = password */}
                     <Form.Control type='password' placeholder='Enter password' value={password} onChange={(e)=>
                      setPassword(e.target.value)}></Form.Control>
                 </Form.Group> 

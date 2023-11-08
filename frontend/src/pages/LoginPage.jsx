@@ -54,6 +54,7 @@ const LoginPage = () => {
                 </Form.Group> 
                 <Form.Group controlId='password' className="my-3">
                     <Form.Label>Password</Form.Label>
+                    {/* Form with input type = password */}
                     <Form.Control type='password' placeholder='Enter password' value={password} onChange={(e)=>
                      setPassword(e.target.value)}></Form.Control>
                 </Form.Group> 
