@@ -5,8 +5,14 @@ import Movie from "../models/movieModel.js";
 // @route   GET /api/movies
 // @access  Public
 const getMovies = asyncHandler(async (req, res) => {
-  const movies = await Movie.find({});
-  res.json(movies);
+  const pageSize = 12;
+  const page = Number(req.query.pageNumber) || 1;
+  const count = await Movie.countDocuments();
+
+  const movies = await Movie.find({})
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+  res.json({ movies, page: page, pages: Math.ceil(count / pageSize) });
 });
 
 // @desc    Fetch single movie

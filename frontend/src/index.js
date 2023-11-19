@@ -20,12 +20,13 @@ import RegisterPage from "./pages/RegisterPage";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 
-// can't reach movies list without being logged in. Private route 
+// can't reach movies list without being logged in. Private route
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomePage />} />
+      <Route path="/page/:pageNumber" element={<HomePage />} />
       <Route path="/movie/:id" element={<MoviePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />

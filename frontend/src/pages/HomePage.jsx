@@ -1,15 +1,16 @@
 import { Row, Col, Container } from 'react-bootstrap';
+import {useParams} from 'react-router-dom';
 import Search from '../components/Search';
 import Movie from '../components/Movie';
 import Loading from '../components/Loading';
 import { useGetMoviesQuery } from '../slices/moviesApiSlice';
+import Paginate from '../components/Paginate';
 
 
 const HomePage = () => {
-  // Used instead of axios, uses fetchAPI under the hood
-  const { data: movies, error, isLoading } = useGetMoviesQuery();
+  const {pageNumber} = useParams();
+  const { data, error, isLoading } = useGetMoviesQuery({pageNumber});
 
-  // TODO: Implement infinite scroll
   // TODO: Fix sizing and spacing of movie cards
 
   return (
@@ -24,12 +25,13 @@ const HomePage = () => {
             <Search />
           </Container>
           <Row>
-            {movies.slice(0, 30).map((movie) => (
+            {data.movies.map((movie) => (
               <Col key={movie._id} sm={12} md={6} lg={4} xl={3} className='text-center'>
                 <Movie movie={movie} />
               </Col>
             ))}
           </Row>
+          <Paginate pages={data.pages} page={data.page} />
         </>
       )}
     </>

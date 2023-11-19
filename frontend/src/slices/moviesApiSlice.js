@@ -6,8 +6,11 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getMovies: builder.query({
       // get request to /api/movies
-      query: () => ({
+      query: ({ pageNumber }) => ({
         url: MOVIES_URL,
+        params: {
+          pageNumber,
+        },
       }),
       keepUnusedDataFor: 10,
     }),
