@@ -11,7 +11,7 @@ const HomePage = () => {
   const {pageNumber} = useParams();
   const { data, error, isLoading } = useGetMoviesQuery({pageNumber});
 
-  // TODO: Fix sizing and spacing of movie cards
+  
 
   return (
     <>
