@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const updateList = (state) => {
   localStorage.setItem("list", JSON.stringify(state));
   return state;

@@ -20,6 +20,7 @@ const ProfilePage = () => {
     const navigate = useNavigate()
 
     const {userInfo} = useSelector((state) => state.auth)
+
     const [updateProfile, {isLoading}] = useProfileMutation()
 
     const submitHandler = async (e) => {
@@ -64,7 +65,7 @@ const ProfilePage = () => {
                 </Form.Group>
                 <Form.Group controlId='confirm password' className='my-2'>
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type='password' placeholder='Confirm password' value={password} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
+                    <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
 
                 <Button type='submit' variant='primary' className='my-2'>Update</Button>

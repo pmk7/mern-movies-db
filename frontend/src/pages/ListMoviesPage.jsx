@@ -17,7 +17,7 @@ const ListMoviesPage = () => {
         dispatch(removeFromList(id));
     }
 
-    // TODO: Add custom message asking to login if user is not logged in
+    // TODO: ensure movies are saved to specific user
 
     return (
         <Row>
