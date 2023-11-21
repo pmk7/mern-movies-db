@@ -2,7 +2,9 @@ import { Pagination } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import React from 'react'
 
-const Paginate = ({ pages, page }) => {
+// TODO: fix pagination so only pages returning keyword are shown, if user enters a keyword
+
+const Paginate = ({ pages, page, keyword = '' }) => {
   const pageNumbersToShow = 3;
   let startPage, endPage;
 
@@ -35,7 +37,7 @@ const Paginate = ({ pages, page }) => {
         </LinkContainer>
         {startPage > 1 && <Pagination.Ellipsis disabled />}
         {[...Array((endPage + 1) - startPage).keys()].map(x => (
-          <LinkContainer key={x + startPage} to={`/page/${x + startPage}`}>
+          <LinkContainer key={x + startPage} to={ keyword ? `/search/${keyword}/page/${x + 1}` : `/page/${x + startPage}`}>
             <Pagination.Item active={x + startPage === page}>
               {x + startPage}
             </Pagination.Item>

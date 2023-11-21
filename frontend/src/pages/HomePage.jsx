@@ -8,10 +8,9 @@ import Paginate from '../components/Paginate';
 
 
 const HomePage = () => {
-  const {pageNumber} = useParams();
-  const { data, error, isLoading } = useGetMoviesQuery({pageNumber});
+  const {pageNumber, keyword} = useParams();
+  const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
 
-  
 
   return (
     <>
@@ -24,14 +23,14 @@ const HomePage = () => {
           <Container className='d-flex justify-content-center align-items-center'>
             <Search />
           </Container>
-          <Row>
+          <Row className='mx-2'>
             {data.movies.map((movie) => (
               <Col key={movie._id} sm={12} md={6} lg={4} xl={3} className='text-center'>
                 <Movie movie={movie} />
               </Col>
             ))}
           </Row>
-          <Paginate pages={data.pages} page={data.page} />
+          <Paginate pages={data.pages} page={data.page} keyword={ keyword ? keyword : ''} />
         </>
       )}
     </>
