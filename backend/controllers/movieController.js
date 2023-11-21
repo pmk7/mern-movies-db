@@ -9,7 +9,28 @@ const getMovies = asyncHandler(async (req, res) => {
   const page = Number(req.query.pageNumber) || 1;
 
   const keyword = req.query.keyword
-    ? { name: { $regex: req.query.keyword, $options: "i" } }
+    ? {
+        $or: [
+          {
+            name: {
+              $regex: req.query.keyword.replace(/-/g, "[-]*"),
+              $options: "i",
+            },
+          },
+          {
+            actors: {
+              $regex: req.query.keyword.replace(/-/g, "[-]*"),
+              $options: "i",
+            },
+          },
+          {
+            directors: {
+              $regex: req.query.keyword.replace(/-/g, "[-]*"),
+              $options: "i",
+            },
+          },
+        ],
+      }
     : {};
 
   const count = await Movie.countDocuments({ ...keyword });

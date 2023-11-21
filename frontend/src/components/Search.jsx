@@ -19,6 +19,7 @@ const Search = () => {
   }
 
 
+
   return (
     <>
     <Form onSubmit={submitHandler} size="lg" className='my-4 w-50 mx-2' >
