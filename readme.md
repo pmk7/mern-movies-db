@@ -33,8 +33,8 @@ Install frontend dependencies: `npm install`
 - Rename env.example file to .env file and add your personal MongoDB URI. See here for more details about to get a connection string: `https://www.mongodb.com/docs/guides/atlas/connection-string/`
 
 ## Seed Database
-1. Import data: `node backend/seeder.js`
-2. Destroy Data: `node backend/seeder.js -d`
+1. Import data: `npm run data:import`
+2. Destroy Data: `npm run data:destory`
 
 - Once the data has been seeded to your database, from the root folder in your project, run `npm run dev`
 
