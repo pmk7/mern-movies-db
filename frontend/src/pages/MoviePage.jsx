@@ -4,11 +4,12 @@ import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import Loading from '../components/Loading';
 import { useGetMovieDetailsQuery } from '../slices/moviesApiSlice';
 import { addToList } from '../slices/listSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const MoviePage = () => {
   const { id: movieId } = useParams();
+  const {userInfo} = useSelector((state) => state.auth)
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,6 +19,10 @@ const MoviePage = () => {
   const addToListHandler = () => {
     dispatch(addToList({...movie, movieId}));
     navigate('/mymovies')
+  }
+
+  const redirectToLoginHandler = () => {
+    navigate('/login')
   }
 
   // TODO: Disable button if movie is already in list
@@ -39,7 +44,7 @@ const MoviePage = () => {
                 <Card.Img src={movie.image_url} alt={movie.name} />
                 <Card.Body>
                   <Card.Text>{movie.desc}</Card.Text>
-                  <Button variant="primary" type='button' onClick={addToListHandler} >Add To My Movies</Button>
+                  {userInfo ? <Button variant="primary" type='button' onClick={addToListHandler} >Add To My Movies</Button> : <Button variant="secondary" type='button' onClick={redirectToLoginHandler} >Sign in to add To My Movies</Button> }
                 </Card.Body>
               </Card>
             </Col>
