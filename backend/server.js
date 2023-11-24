@@ -6,6 +6,7 @@ import connectDB from "./config/db.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import moviesRoutes from "./routes/moviesRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import listRoutes from "./routes/listRoutes.js";
 
 const port = process.env.PORT || 8000;
 
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/movies", moviesRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/list", listRoutes);
 
 // Error middleware
 app.use(notFound);
