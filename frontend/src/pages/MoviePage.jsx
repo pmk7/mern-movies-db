@@ -5,20 +5,50 @@ import Loading from '../components/Loading';
 import { useGetMovieDetailsQuery } from '../slices/moviesApiSlice';
 import { addToList } from '../slices/listSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { useCreateListMutation } from '../slices/listApiSlice';
 
 
 const MoviePage = () => {
   const { id: movieId } = useParams();
   const {userInfo} = useSelector((state) => state.auth)
+  const { listItems } = useSelector((state) => state.list);
+
+  const [createList] = useCreateListMutation();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {data: movie, error, isLoading} = useGetMovieDetailsQuery(movieId);
 
-  const addToListHandler = () => {
-    dispatch(addToList({...movie, movieId}));
-    navigate('/mymovies')
+  // const addToListHandler = () => {
+  //   dispatch(addToList({...movie, movieId}));
+  //   navigate('/mymovies')
+  // }
+
+  const user = userInfo._id
+
+  const addToListHandler = async () => {
+
+    /// query database to see if user already exists
+    /// if user exists, update list
+    /// if user does not exist, create new list
+
+    try {
+      const res = await createList({ 
+        user,
+        listItems: [{
+          movieId: movie._id,
+          name: movie.name,
+          image_url: movie.image_url,
+        }],
+
+      }).unwrap();
+      console.log(res)
+      // dispatch(addToList(res));
+      // navigate('/mymovies')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const redirectToLoginHandler = () => {

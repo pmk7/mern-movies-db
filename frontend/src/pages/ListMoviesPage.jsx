@@ -5,6 +5,7 @@ import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import { removeFromList  } from '../slices/listSlice';
 
 
+
 const ListMoviesPage = () => {
     const dispatch = useDispatch();
 
@@ -16,6 +17,7 @@ const ListMoviesPage = () => {
         console.log(id)
         dispatch(removeFromList(id));
     }
+
 
     // TODO: ensure movies are saved to specific user
 

@@ -9,11 +9,9 @@ const listSchema = mongoose.Schema(
     },
     listItems: [
       {
-        movie: {
-          type: mongoose.Schema.Types.ObjectId,
-          required: true,
-          ref: "Movie",
-        },
+        movieId: { type: String, required: true },
+        name: { type: String, required: true },
+        image_url: { type: String, required: true },
       },
     ],
   },
@@ -22,6 +20,6 @@ const listSchema = mongoose.Schema(
   }
 );
 
-const UserMovieList = mongoose.model("UserMovieList", listSchema);
+const List = mongoose.model("List", listSchema);
 
-export default UserMovieList;
+export default List;
