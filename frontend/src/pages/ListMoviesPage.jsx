@@ -3,15 +3,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import { removeFromList  } from '../slices/listSlice';
+import { useGetMyListQuery } from '../slices/listApiSlice';
 
 
 
 const ListMoviesPage = () => {
+    const {userInfo} = useSelector((state) => state.auth)
+
+    const userId = userInfo._id 
+
+    const {data, error, isLoading   } = useGetMyListQuery(userId);
+    console.log(data)
+
     const dispatch = useDispatch();
 
-    const list = useSelector((state) => state.list);
-    const { listItems } = list;
-    console.log(listItems)
+    // const list = useSelector((state) => state.list);
+    // const { listItems } = list;
+    // console.log(listItems)
 
     const removeFromListHandler = async (id) => {
         console.log(id)
@@ -25,11 +33,11 @@ const ListMoviesPage = () => {
         <Row>
             <Col md={8}>
                 <h1 style={{marginBottom: '3rem'}}>Movies List</h1>
-                {listItems.length === 0 ? (<h2>Your list is empty
+                {(!data || !data.listItems || data.listItems.length === 0) ? (<h2>Your list is empty
                     <Link to='/'> Go Back</Link>
                 </h2>) : (
                     <ListGroup variant='flush'>
-                        {listItems.map((item) => (
+                        {data.listItems.map((item) => (
                             <ListGroup.Item key={item.movieId}>
                                 <Row>
                                     <Col md={3}>

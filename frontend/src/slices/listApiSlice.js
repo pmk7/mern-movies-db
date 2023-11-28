@@ -9,13 +9,24 @@ export const listApiSlice = apiSlice.injectEndpoints({
         body: { ...list },
       }),
     }),
-    getListItems: builder.query({
-      query: () => ({
+    addToList: builder.mutation({
+      query: (list) => ({
         url: LIST_MOVIES_URL,
+        method: "PUT",
+        body: { ...list },
+      }),
+    }),
+    getMyList: builder.query({
+      query: (userId) => ({
+        url: `${LIST_MOVIES_URL}/${userId}`,
         method: "GET",
       }),
     }),
   }),
 });
 
-export const { useCreateListMutation } = listApiSlice;
+export const {
+  useCreateListMutation,
+  useAddToListMutation,
+  useGetMyListQuery,
+} = listApiSlice;

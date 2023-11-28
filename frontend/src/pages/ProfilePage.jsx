@@ -10,6 +10,8 @@ import { setCredentials } from '../slices/authSlice'
 
 // TODO: verify by logging in and redirecting to homepage I'm fulfilling this requirement: protect repeat inserts e.g. page reload??
 
+// TODO: Sanitize inputs, code injection
+
 const ProfilePage = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')

@@ -10,6 +10,7 @@ import {toast} from 'react-toastify'
 
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
+// TODO: Sanitize inputs, code injection
 
 const RegisterPage = () => {
     const [email, setEmail] = useState('')

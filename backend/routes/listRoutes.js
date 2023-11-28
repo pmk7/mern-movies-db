@@ -1,8 +1,13 @@
 import express from "express";
 const router = express.Router();
-import { createList, getMyList } from "../controllers/listController.js";
+import {
+  createList,
+  getMyList,
+  addToList,
+} from "../controllers/listController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
-router.route("/").post(protect, createList).get(protect, getMyList);
+router.route("/").post(createList);
+router.route("/:id").get(getMyList);
 
 export default router;

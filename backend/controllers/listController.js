@@ -5,43 +5,77 @@ import List from "../models/listModel.js";
 // @desc    Create new list
 // @route   POST /api/list
 // @access  Private
+// @desc    Create new list or add to existing list
+// @route   POST /api/list
+// @access  Private
+// @desc    Create new list or add to existing list
+// @route   POST /api/list
+// @access  Private
 const createList = asyncHandler(async (req, res) => {
   console.log("req.body", req.body);
 
-  const { listItems } = req.body;
-  const { user } = req.body;
+  const { user, listItems } = req.body;
 
   if (!Array.isArray(listItems)) {
     return res.status(400).json({ message: "listItems must be an array" });
   }
 
   try {
-    const list = new List({
-      user,
-      listItems: listItems.map((entry) => ({
-        movieId: entry.movieId,
-        name: entry.name,
-        image_url: entry.image_url,
-      })),
-    });
+    // Check if a list with the user id exists
+    let list = await List.findOne({ user: user });
 
-    // console.log("list", list);
+    if (list) {
+      // If the list exists, check if the movie is already in the list
+      const isMovieInList = list.listItems.some(
+        (item) => item.movieId === listItems[0].movieId
+      );
 
-    const createdList = await list.save();
+      if (isMovieInList) {
+        return res
+          .status(400)
+          .json({ message: "Movie is already in the list" });
+      }
 
-    res.status(201).json(createdList);
+      // Add the new list items to the list
+      list.listItems.push(...listItems);
+    } else {
+      // If the list doesn't exist, create a new list
+      list = new List({
+        user,
+        listItems: listItems.map((entry) => ({
+          movieId: entry.movieId,
+          name: entry.name,
+          image_url: entry.image_url,
+        })),
+      });
+    }
+
+    const updatedList = await list.save();
+
+    res.status(201).json(updatedList);
   } catch (error) {
     console.log(error);
   }
 });
 
-// @desc    Get logged in user list
-// @route   GET /api/list/mylist
-// @access  Private
-const getMyList = asyncHandler(async (req, res) => {
-  const list = await List.find({});
-  console.log(list);
-  res.status(200).json(list);
+const addToList = asyncHandler(async (req, res) => {
+  res.send("add to list");
 });
 
-export { createList, getMyList };
+// @desc    Get logged in user list
+// @route   GET /api/list/:id
+// @access  Private
+
+const getMyList = asyncHandler(async (req, res) => {
+  const list = await List.findOne({ user: req.params.id });
+  console.log(list);
+
+  if (list) {
+    res.json(list);
+  } else {
+    res.status(404);
+    throw new Error("List not found");
+  }
+});
+
+export { createList, getMyList, addToList };

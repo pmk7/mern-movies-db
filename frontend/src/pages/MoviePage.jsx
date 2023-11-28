@@ -5,7 +5,7 @@ import Loading from '../components/Loading';
 import { useGetMovieDetailsQuery } from '../slices/moviesApiSlice';
 import { addToList } from '../slices/listSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { useCreateListMutation } from '../slices/listApiSlice';
+import { useCreateListMutation, useAddToListMutation, useGetMyListQuery } from '../slices/listApiSlice';
 
 
 const MoviePage = () => {
@@ -25,7 +25,7 @@ const MoviePage = () => {
   //   navigate('/mymovies')
   // }
 
-  const user = userInfo._id
+  
 
   const addToListHandler = async () => {
 
@@ -34,6 +34,7 @@ const MoviePage = () => {
     /// if user does not exist, create new list
 
     try {
+      const user = userInfo._id
       const res = await createList({ 
         user,
         listItems: [{
@@ -50,6 +51,8 @@ const MoviePage = () => {
       console.log(error)
     }
   }
+
+  
 
   const redirectToLoginHandler = () => {
     navigate('/login')
