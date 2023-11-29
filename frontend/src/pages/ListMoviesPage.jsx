@@ -1,10 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector , useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import { useGetMyListQuery, useDeleteMovieFromListMutation } from '../slices/listApiSlice';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Loading from '../components/Loading';
 
 
 
@@ -13,9 +14,10 @@ const ListMoviesPage = () => {
 
     const userId = userInfo._id 
 
-    const {data, refetch } = useGetMyListQuery(userId);
+    const {data, refetch, isLoading } = useGetMyListQuery(userId);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
  
 
     const  [deleteMovieFromList] = useDeleteMovieFromListMutation();   
@@ -23,10 +25,9 @@ const ListMoviesPage = () => {
     const removeFromListHandler = async (movieId) => {
         try {
           console.log('movieId', movieId);
-          deleteMovieFromList(movieId);
-          refetch();
-          navigate('/');
+          const res = await deleteMovieFromList(movieId).unwrap();
           toast.success('Movie removed from your list successfully');
+          navigate('/');
         } catch (error) {
           console.log(error);
         }
@@ -35,10 +36,14 @@ const ListMoviesPage = () => {
     // TODO: ensure when list items change component is re-rendered and state is updated    
 
     return (
-        <Row>
+        <>
+        <Link className='btn btn-dark my-4 mx-2' to='/'>
+        Back
+      </Link>
+      {isLoading ? <Loading /> : (
+        <Row >
             <Col md={8}>
-                <h1 className='my-3'>Movies List</h1>
-                {(!data || !data.listItems || data.listItems.length === 0) ? (<h2>Your list is empty  <Link to='/'>Go Back</Link>
+                {(!data || !data.listItems || data.listItems.length === 0) ? (<h2>So empty... let's add some movies 
                 </h2>) : (
                     <ListGroup variant='flush'>
                         {data.listItems.map((item) => (
@@ -65,6 +70,8 @@ const ListMoviesPage = () => {
                 )}
             </Col>    
         </Row>
+            )}
+        </>
     )
 }
 

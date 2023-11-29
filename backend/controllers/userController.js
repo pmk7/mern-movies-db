@@ -112,16 +112,16 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 // @desc    Get users
 // @route   GET /api/users
 // @access  Private/Admin
-const getUsers = asyncHandler(async (req, res) => {
-  res.send("Get users");
-});
+// const getUsers = asyncHandler(async (req, res) => {
+//   res.send("Get users");
+// });
 
-// @desc    Delete user by id
-// @route   GET /api/users/:id
-// @access  Private/Admin
-const getUserByID = asyncHandler(async (req, res) => {
-  res.send("Get user by id");
-});
+// // @desc    Delete user by id
+// // @route   GET /api/users/:id
+// // @access  Private/Admin
+// const getUserByID = asyncHandler(async (req, res) => {
+//   res.send("Get user by id");
+// });
 
 // @desc    Delete users
 // @route   DELETE /api/users/profile
@@ -129,6 +129,12 @@ const getUserByID = asyncHandler(async (req, res) => {
 
 const deleteProfile = asyncHandler(async (req, res) => {
   const { userId } = req.body;
+
+  // In the following example, an express handler attempts to delete a single document from a MongoDB collection. The document to be deleted is identified by its _id field, which is constructed from user input. The user input may contain a query object, so this code is vulnerable to a NoSQL injection attack.
+  if (typeof userId !== "string") {
+    res.status(400).json({ message: "Invalid user ID" });
+    return;
+  }
   const user = await User.findById(userId);
   if (!user) {
     res.status(404).json({ message: "User not found" });
@@ -145,7 +151,5 @@ export {
   logoutUser,
   getUserProfile,
   updateUserProfile,
-  getUsers,
-  getUserByID,
   deleteProfile,
 };

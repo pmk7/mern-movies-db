@@ -9,8 +9,6 @@ const Search = () => {
   const {keyword: urlKeyword} = useParams()
   const [keyword, setKeyword] = useState(urlKeyword || '')
 
-
-
   const submitHandler = (e) => {
     e.preventDefault()
     if (keyword.trim()) {
@@ -19,8 +17,6 @@ const Search = () => {
       navigate('/')
     }
   }
-
-
 
   return (
     <>
