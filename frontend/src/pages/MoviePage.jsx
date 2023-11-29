@@ -6,6 +6,7 @@ import { useGetMovieDetailsQuery } from '../slices/moviesApiSlice';
 import { addToList } from '../slices/listSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCreateListMutation, useAddToListMutation, useGetMyListQuery } from '../slices/listApiSlice';
+import Error from '../components/Error';
 
 
 const MoviePage = () => {
@@ -68,7 +69,7 @@ const MoviePage = () => {
       {isLoading ? (
         <Loading />
       ) : error ? (
-        <div>{error.message}</div>
+        <Error/>
       ) : (
         <>
           <Row>

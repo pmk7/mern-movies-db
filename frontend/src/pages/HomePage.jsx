@@ -5,6 +5,7 @@ import Movie from '../components/Movie';
 import Loading from '../components/Loading';
 import { useGetMoviesQuery } from '../slices/moviesApiSlice';
 import Paginate from '../components/Paginate';
+import Error from '../components/Error';
 
 
 const HomePage = () => {
@@ -17,7 +18,7 @@ const HomePage = () => {
       {isLoading ? (
         <Loading />
       ) : error ? (
-        <div>{error.message}</div>
+        <Error/>
       ) : (
         <>
           <Container className='d-flex justify-content-center align-items-center'>
