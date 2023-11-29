@@ -3,10 +3,10 @@ import { useParams, Link, useNavigate} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import Loading from '../components/Loading';
 import { useGetMovieDetailsQuery } from '../slices/moviesApiSlice';
-import { addToList } from '../slices/listSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { useCreateListMutation, useAddToListMutation, useGetMyListQuery } from '../slices/listApiSlice';
+import { useCreateListMutation, useGetMyListQuery } from '../slices/listApiSlice';
 import Error from '../components/Error';
+import {toast} from 'react-toastify'
 
 
 const MoviePage = () => {
@@ -22,10 +22,7 @@ const MoviePage = () => {
 
   const {data: movie, error, isLoading} = useGetMovieDetailsQuery(movieId);
 
-  const {data:list   } = useGetMyListQuery(userId);
-
-
-
+  const {data:list, refetch} = useGetMyListQuery(userId);
 
   const addToListHandler = async () => {
     /// query database to see if user already exists
@@ -43,7 +40,9 @@ const MoviePage = () => {
         }],
 
       }).unwrap();
-      console.log(res)
+      toast.success('Movie added to your list successfully');
+      console.log(user)
+      refetch()
       navigate('/mymovies')
     } catch (error) {
       console.log(error)
