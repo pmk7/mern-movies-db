@@ -29,7 +29,7 @@ const authUser = asyncHandler(async (req, res) => {
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
-  const userExists = await User.findOne({ email }); // Find user by email mongoose model method
+  const userExists = await User.findOne({ email });
 
   if (userExists) {
     res.status(400);
@@ -67,9 +67,8 @@ const logoutUser = asyncHandler(async (req, res) => {
 // @route   GET /api/users/profile
 // @access  Private
 const getUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id); // Find user by ID mongoose model method
+  const user = await User.findById(req.user._id);
 
-  // console.log(user);
   if (user) {
     res.status(200).json({
       _id: user._id,
@@ -97,8 +96,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       user.password = req.body.password;
     }
 
-    const updatedUser = await user.save(); // Save user mongoose model method
-
+    const updatedUser = await user.save();
     res.status(200).json({
       _id: updatedUser._id,
       name: updatedUser.name,
@@ -130,9 +128,8 @@ const getUserByID = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const deleteProfile = asyncHandler(async (req, res) => {
-  const { userId } = req.body; // Get userId from req.body
-  const user = await User.findById(userId); // Find user by ID mongoose model method
-
+  const { userId } = req.body;
+  const user = await User.findById(userId);
   if (!user) {
     res.status(404).json({ message: "User not found" });
     return;
@@ -140,12 +137,6 @@ const deleteProfile = asyncHandler(async (req, res) => {
 
   await User.deleteOne({ _id: user._id });
   res.status(200).json({ message: "User deleted" });
-});
-// @desc    Update users
-// @route   PUT /api/users/:id
-// @access  Private/Admin
-const updateUser = asyncHandler(async (req, res) => {
-  res.send("Update user");
 });
 
 export {
@@ -157,5 +148,4 @@ export {
   getUsers,
   getUserByID,
   deleteProfile,
-  updateUser,
 };

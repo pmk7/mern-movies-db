@@ -12,6 +12,7 @@ const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)
 
 // TODO: Sanitize inputs, code injection
 
+
 const RegisterPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -28,6 +29,8 @@ const RegisterPage = () => {
     const {search} = useLocation();
     const sp = new URLSearchParams(search);
     const redirect = sp.get('redirect') || '/';
+
+    
 
     
     useEffect(()=> {

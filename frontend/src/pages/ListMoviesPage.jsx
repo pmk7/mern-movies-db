@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {Link, Navigate} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import { useGetMyListQuery, useDeleteMovieFromListMutation } from '../slices/listApiSlice';
 import { useNavigate } from 'react-router-dom';
@@ -13,25 +13,24 @@ const ListMoviesPage = () => {
 
     const userId = userInfo._id 
 
-    const {data, error, isLoading, refetch } = useGetMyListQuery(userId);
+    const {data, refetch } = useGetMyListQuery(userId);
 
-    const dispatch = useDispatch();
     const navigate = useNavigate();
  
 
-    const [deleteMovieFromList] = useDeleteMovieFromListMutation();   
+    const  [deleteMovieFromList] = useDeleteMovieFromListMutation();   
 
     const removeFromListHandler = async (movieId) => {
         try {
-            console.log('movieId',movieId)
-            const res = await deleteMovieFromList(movieId).unwrap()
-            console.log(res)
-            toast.success('Movie removed from your list successfully');
-            refetch()
+          console.log('movieId', movieId);
+          deleteMovieFromList(movieId);
+          refetch();
+          navigate('/');
+          toast.success('Movie removed from your list successfully');
         } catch (error) {
-            console.log(error)  
+          console.log(error);
         }
-    }
+      };
 
     // TODO: ensure when list items change component is re-rendered and state is updated    
 

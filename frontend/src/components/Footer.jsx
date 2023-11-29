@@ -4,7 +4,7 @@ const Footer = () => {
     const year = new Date().getFullYear()
 
   return (
-    <footer className='fixed-bottom'>
+    <footer >
        <Container>
         <Row>
             <Col className='text-center py-4'>

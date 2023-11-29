@@ -9,9 +9,8 @@ import {
   getUsers,
   getUserByID,
   deleteProfile,
-  updateUser,
 } from "../controllers/userController.js";
-import { protect, admin } from "../middleware/authMiddleware.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 router.route("/").post(registerUser).get(protect, getUsers);
 router.post("/logout", logoutUser);

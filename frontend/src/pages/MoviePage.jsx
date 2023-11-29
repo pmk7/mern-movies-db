@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import Loading from '../components/Loading';
 import { useGetMovieDetailsQuery } from '../slices/moviesApiSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useCreateListMutation, useGetMyListQuery } from '../slices/listApiSlice';
 import Error from '../components/Error';
 import {toast} from 'react-toastify'
@@ -17,7 +17,6 @@ const MoviePage = () => {
   
   const [createList] = useCreateListMutation();
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const {data: movie, error, isLoading} = useGetMovieDetailsQuery(movieId);
@@ -25,10 +24,7 @@ const MoviePage = () => {
   const {data:list, refetch} = useGetMyListQuery(userId);
 
   const addToListHandler = async () => {
-    /// query database to see if user already exists
-    /// if user exists, update list
-    /// if user does not exist, create new list
-    isMovieInList()
+
     try {
       const user = userInfo._id
       const res = await createList({ 
@@ -38,10 +34,8 @@ const MoviePage = () => {
           name: movie.name,
           image_url: movie.image_url,
         }],
-
       }).unwrap();
       toast.success('Movie added to your list successfully');
-      console.log(user)
       refetch()
       navigate('/mymovies')
     } catch (error) {
@@ -57,6 +51,7 @@ const MoviePage = () => {
   const redirectToLoginHandler = () => {
     navigate('/login')
   }
+
 
   // TODO: Disable button if movie is already in list
 
@@ -77,16 +72,7 @@ const MoviePage = () => {
                 <Card.Img src={movie.image_url} alt={movie.name} />
                 <Card.Body>
                   <Card.Text>{movie.desc}</Card.Text>
-                  {
-  !userInfo ? 
-    <Button variant="secondary" type='button' onClick={redirectToLoginHandler}>Sign in to Add To My Movies</Button> 
-  : isMovieInList() ? 
-    <Button variant="secondary" type='button' disabled>Already in My Movies</Button>
-  : 
-    <Button variant="primary" type='button' onClick={addToListHandler}>Add To My Movies</Button>
-}
-
-
+                  {!userInfo ? <Button variant="secondary" type='button' onClick={redirectToLoginHandler}>Sign in to Add To My Movies</Button> : isMovieInList() ?  <Button variant="secondary" type='button' >Already in My Movies</Button> : <Button variant="primary" type='button' onClick={addToListHandler}>Add To My Movies</Button>}
                 </Card.Body>
               </Card>
             </Col>

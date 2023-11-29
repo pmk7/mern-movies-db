@@ -78,8 +78,6 @@ const getMyList = asyncHandler(async (req, res) => {
 const deleteMovieFromList = asyncHandler(async (req, res) => {
   const movieId = req.params.id;
 
-  console.log(movieId);
-
   const listWithMovie = await List.findOne({ "listItems.movieId": movieId });
   console.log(listWithMovie);
 
@@ -89,7 +87,7 @@ const deleteMovieFromList = asyncHandler(async (req, res) => {
     { new: true }
   );
 
-  console.log(updatedList);
+  console.log("updatedList", updatedList);
 });
 
 export { createList, getMyList, addToList, deleteMovieFromList };
