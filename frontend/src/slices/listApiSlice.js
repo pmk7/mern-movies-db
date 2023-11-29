@@ -9,17 +9,16 @@ export const listApiSlice = apiSlice.injectEndpoints({
         body: { ...list },
       }),
     }),
-    addToList: builder.mutation({
-      query: (list) => ({
-        url: LIST_MOVIES_URL,
-        method: "PUT",
-        body: { ...list },
-      }),
-    }),
     getMyList: builder.query({
       query: (userId) => ({
         url: `${LIST_MOVIES_URL}/${userId}`,
         method: "GET",
+      }),
+    }),
+    deleteMovieFromList: builder.mutation({
+      query: (userId) => ({
+        url: `${LIST_MOVIES_URL}/${userId}`,
+        method: "PUT",
       }),
     }),
   }),
@@ -27,6 +26,6 @@ export const listApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useCreateListMutation,
-  useAddToListMutation,
   useGetMyListQuery,
+  useDeleteMovieFromListMutation,
 } = listApiSlice;

@@ -2,12 +2,6 @@ import express from "express";
 import asyncHandler from "../middleware/asyncHandler.js";
 import List from "../models/listModel.js";
 
-// @desc    Create new list
-// @route   POST /api/list
-// @access  Private
-// @desc    Create new list or add to existing list
-// @route   POST /api/list
-// @access  Private
 // @desc    Create new list or add to existing list
 // @route   POST /api/list
 // @access  Private
@@ -68,7 +62,7 @@ const addToList = asyncHandler(async (req, res) => {
 
 const getMyList = asyncHandler(async (req, res) => {
   const list = await List.findOne({ user: req.params.id });
-  console.log(list);
+  // console.log(list);
 
   if (list) {
     res.json(list);
@@ -78,4 +72,24 @@ const getMyList = asyncHandler(async (req, res) => {
   }
 });
 
-export { createList, getMyList, addToList };
+// @desc    Remove movie from list
+// @route   PUT /api/list/:id
+// @access  Private
+const deleteMovieFromList = asyncHandler(async (req, res) => {
+  const movieId = req.params.id;
+
+  console.log(movieId);
+
+  const listWithMovie = await List.findOne({ "listItems.movieId": movieId });
+  console.log(listWithMovie);
+
+  const updatedList = await List.findOneAndUpdate(
+    { "listItems.movieId": movieId },
+    { $pull: { listItems: { movieId: movieId } } },
+    { new: true }
+  );
+
+  console.log(updatedList);
+});
+
+export { createList, getMyList, addToList, deleteMovieFromList };

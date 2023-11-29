@@ -13,6 +13,8 @@ const MoviePage = () => {
   const { id: movieId } = useParams();
   const {userInfo} = useSelector((state) => state.auth)
   const { listItems } = useSelector((state) => state.list);
+  const userId = userInfo?._id 
+
 
   const [createList] = useCreateListMutation();
 
@@ -21,19 +23,23 @@ const MoviePage = () => {
 
   const {data: movie, error, isLoading} = useGetMovieDetailsQuery(movieId);
 
+  const {data:list   } = useGetMyListQuery(userId);
+
+  // console.log(movie)
+  // console.log(list.listItems.length)
+
   // const addToListHandler = () => {
   //   dispatch(addToList({...movie, movieId}));
   //   navigate('/mymovies')
   // }
 
-  
+
 
   const addToListHandler = async () => {
-
     /// query database to see if user already exists
     /// if user exists, update list
     /// if user does not exist, create new list
-
+    isMovieInList()
     try {
       const user = userInfo._id
       const res = await createList({ 
@@ -46,12 +52,24 @@ const MoviePage = () => {
 
       }).unwrap();
       console.log(res)
-      // dispatch(addToList(res));
-      // navigate('/mymovies')
+      navigate('/mymovies')
     } catch (error) {
       console.log(error)
     }
   }
+
+  const isMovieInList = () => { 
+    list.listItems.length > 0 && list.listItems.map((item) => {
+      if (item.movieId === movieId) {
+        return console.log(true)
+      } else {
+        return console.log(false)
+      }
+    } )
+
+  }
+  
+
 
   
 
@@ -78,7 +96,14 @@ const MoviePage = () => {
                 <Card.Img src={movie.image_url} alt={movie.name} />
                 <Card.Body>
                   <Card.Text>{movie.desc}</Card.Text>
-                  {userInfo ? <Button variant="primary" type='button' onClick={addToListHandler} >Add To My Movies</Button> : <Button variant="secondary" type='button' onClick={redirectToLoginHandler} >Sign in to add To My Movies</Button> }
+                  {userInfo && !isMovieInList ? 
+  <Button variant="primary" type='button' onClick={addToListHandler} >Add To My Movies</Button> 
+: 
+  (!userInfo ? 
+    <Button variant="secondary" type='button' onClick={redirectToLoginHandler} >Sign in to add To My Movies</Button> 
+  : 
+    <Button variant="secondary" type='button' disabled >Already in My Movies</Button>)
+} 
                 </Card.Body>
               </Card>
             </Col>

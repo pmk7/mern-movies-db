@@ -9,6 +9,8 @@ const Search = () => {
   const {keyword: urlKeyword} = useParams()
   const [keyword, setKeyword] = useState(urlKeyword || '')
 
+
+
   const submitHandler = (e) => {
     e.preventDefault()
     if (keyword.trim()) {
@@ -23,7 +25,7 @@ const Search = () => {
   return (
     <>
     <Form onSubmit={submitHandler} size="lg" className='my-4 w-50 mx-2' >
-     <Form.Control type="text" name='q' onChange={(e)=> setKeyword(e.target.value)} value={keyword} placeholder={'Search...'} />
+     <Form.Control type="text" name='q' onChange={(e)=> setKeyword(e.target.value)} value={keyword} placeholder={'Search... by movie, actor or director'} />
     </Form>
     <Button type='submit' variant='primary' className='my-4 mx-2' onClick={()=> navigate(`/search/${keyword}`)}>Search</Button>
     </>

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
-import { removeFromList  } from '../slices/listSlice';
-import { useGetMyListQuery } from '../slices/listApiSlice';
+// import { removeFromList  } from '../slices/listSlice';
+import { useGetMyListQuery, useDeleteMovieFromListMutation } from '../slices/listApiSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -12,27 +13,37 @@ const ListMoviesPage = () => {
 
     const userId = userInfo._id 
 
-    const {data, error, isLoading   } = useGetMyListQuery(userId);
-    console.log(data)
+    const {data, error, isLoading, refetch   } = useGetMyListQuery(userId);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+ 
+
+    const [deleteMovieFromList] = useDeleteMovieFromListMutation();   
+
+    useEffect(() => {
+        refetch()
+    }, [data])
+
 
     // const list = useSelector((state) => state.list);
     // const { listItems } = list;
     // console.log(listItems)
 
-    const removeFromListHandler = async (id) => {
-        console.log(id)
-        dispatch(removeFromList(id));
-    }
+    const removeFromListHandler = async (movieId) => {
+        console.log('movieId',movieId)
+        await deleteMovieFromList(movieId)
+        /// refresh page
+    
 
+    }
 
     // TODO: ensure movies are saved to specific user
 
     return (
         <Row>
             <Col md={8}>
-                <h1 style={{marginBottom: '3rem'}}>Movies List</h1>
+                <h1 className='my-3'>Movies List</h1>
                 {(!data || !data.listItems || data.listItems.length === 0) ? (<h2>Your list is empty
                     <Link to='/'> Go Back</Link>
                 </h2>) : (
@@ -51,7 +62,8 @@ const ListMoviesPage = () => {
                                         </Link> 
                                     </Col>
                                     <Col md={3}>
-                                        <Button variant="primary" type='button' onClick={()=> removeFromListHandler(item._id)}>Remove</Button>
+                                    <Button variant="primary" type='button' onClick={() => {
+                                    removeFromListHandler(item.movieId)}}>Remove</Button>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>

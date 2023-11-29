@@ -44,19 +44,19 @@ const LoginPage = () => {
     return (
 
         <FormContainer>
-            <h1>
+            <h1 className="my-3">
                 Sign in 
             </h1>
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId='email' className="my-3">
                     <Form.Label>Email Address</Form.Label>
-                    <Form.Control type='email' placeholder='Enter email' value={email} onChange={(e)=> setEmail(e.target.value)}></Form.Control>
+                    <Form.Control type='email' placeholder='Enter email' value={email} onChange={(e)=> setEmail(e.target.value)} autoComplete="username"></Form.Control>
                 </Form.Group> 
                 <Form.Group controlId='password' className="my-3">
                     <Form.Label>Password</Form.Label>
                     {/* Form with input type = password */}
                     <Form.Control type='password' placeholder='Enter password' value={password} onChange={(e)=>
-                     setPassword(e.target.value)}></Form.Control>
+                     setPassword(e.target.value)} autoComplete="current-password"></Form.Control>
                 </Form.Group> 
                 <Button type='submit' variant='primary' className="my-3" disabled={isLoading}>
                     Sign In

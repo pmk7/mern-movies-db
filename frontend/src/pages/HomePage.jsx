@@ -13,6 +13,7 @@ const HomePage = () => {
   const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
 
 
+
   return (
     <>
       {isLoading ? (
@@ -22,7 +23,7 @@ const HomePage = () => {
       ) : (
         <>
           <Container className='d-flex justify-content-center align-items-center'>
-            <Search />
+            <Search/>
           </Container>
           <Row className='mx-2'>
             {data.movies.map((movie) => (
