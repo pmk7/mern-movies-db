@@ -8,7 +8,7 @@ import {
 } from "../controllers/listController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
-router.route("/").post(createList);
-router.route("/:id").get(getMyList).put(deleteMovieFromList);
+router.route("/").post(protect, createList);
+router.route("/:id").get(protect, getMyList).put(protect, deleteMovieFromList);
 
 export default router;

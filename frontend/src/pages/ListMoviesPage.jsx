@@ -12,30 +12,21 @@ const ListMoviesPage = () => {
 
     const userId = userInfo._id 
 
-    const {data, error, isLoading, refetch   } = useGetMyListQuery(userId);
+    const {data, error, isLoading, refetch } = useGetMyListQuery(userId);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    console.log(data.listItems)
  
 
     const [deleteMovieFromList] = useDeleteMovieFromListMutation();   
 
-    useEffect(() => {
-        refetch() 
-    }, [data.listItems])
-
-
     const removeFromListHandler = async (movieId) => {
         console.log('movieId',movieId)
-        await deleteMovieFromList(movieId)
-        /// refresh page
-    
-
+        deleteMovieFromList(movieId)
+        refetch()
     }
 
-    // TODO: ensure movies are saved to specific user
+    // TODO: ensure when list items change component is re-rendered and state is updated    
 
     return (
         <Row>

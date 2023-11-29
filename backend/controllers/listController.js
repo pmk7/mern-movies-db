@@ -62,7 +62,7 @@ const addToList = asyncHandler(async (req, res) => {
 
 const getMyList = asyncHandler(async (req, res) => {
   const list = await List.findOne({ user: req.params.id });
-  // console.log(list);
+  console.log(list);
 
   if (list) {
     res.json(list);

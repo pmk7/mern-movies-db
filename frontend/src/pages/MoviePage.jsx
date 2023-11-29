@@ -24,7 +24,6 @@ const MoviePage = () => {
 
   const {data:list   } = useGetMyListQuery(userId);
 
-  console.log(list)
 
 
 
@@ -52,7 +51,7 @@ const MoviePage = () => {
   }
 
   const isMovieInList = () => { 
-      return list.listItems.some(item => item.movieId === movieId);
+      return list?.listItems?.some(item => item.movieId === movieId);
     }
     
 
