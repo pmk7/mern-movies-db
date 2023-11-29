@@ -4,6 +4,7 @@ import {Link, Navigate} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import { useGetMyListQuery, useDeleteMovieFromListMutation } from '../slices/listApiSlice';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 
@@ -21,6 +22,13 @@ const ListMoviesPage = () => {
     const [deleteMovieFromList] = useDeleteMovieFromListMutation();   
 
     const removeFromListHandler = async (movieId) => {
+        try {
+            const res = await deleteMovieFromList(movieId).unwrap()
+            console.log(res)
+            toast.success('Movie removed from your list successfully');
+        } catch (error) {
+            console.log(error)  
+        }
         console.log('movieId',movieId)
         deleteMovieFromList(movieId)
         refetch()
@@ -32,8 +40,7 @@ const ListMoviesPage = () => {
         <Row>
             <Col md={8}>
                 <h1 className='my-3'>Movies List</h1>
-                {(!data || !data.listItems || data.listItems.length === 0) ? (<h2>Your list is empty
-                    <Link to='/'> Go Back</Link>
+                {(!data || !data.listItems || data.listItems.length === 0) ? (<h2>Your list is empty  <Link to='/'>Go Back</Link>
                 </h2>) : (
                     <ListGroup variant='flush'>
                         {data.listItems.map((item) => (

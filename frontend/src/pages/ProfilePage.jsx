@@ -3,10 +3,13 @@ import { useState, useEffect } from 'react'
 import {Form, Button, Row, Col} from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { useProfileMutation } from '../slices/usersApiSlice'
+import { useProfileMutation, useDeleteProfileMutation } from '../slices/usersApiSlice'
 import Loading from '../components/Loading'
 import {toast} from 'react-toastify'
 import { setCredentials } from '../slices/authSlice'
+import { useLogoutMutation } from '../slices/usersApiSlice'
+import {logout} from '../slices/authSlice'
+
 
 // TODO: verify by logging in and redirecting to homepage I'm fulfilling this requirement: protect repeat inserts e.g. page reload??
 
@@ -24,6 +27,9 @@ const ProfilePage = () => {
     const {userInfo} = useSelector((state) => state.auth)
 
     const [updateProfile, {isLoading}] = useProfileMutation()
+    const [deleteProfile] = useDeleteProfileMutation()
+
+
 
     const submitHandler = async (e) => {
         e.preventDefault()
@@ -41,6 +47,29 @@ const ProfilePage = () => {
         }
     } 
 
+    const handleDeleteProfile = async () => {
+        const userId = userInfo._id;
+        console.log(userId);
+        try {
+          const res = await deleteProfile(userId).unwrap(); // Pass userId directly
+          console.log(res);
+          // Handle post-deletion logic
+          toast.success('Profile deleted successfully');
+          dispatch(logout());
+          navigate('/');
+        } catch (err) {
+          if (err.status === 'PARSING_ERROR') {
+            // Handle parsing error specifically
+            console.error('Parsing error:', err);
+          } else {
+            // Handle other types of errors
+            toast.error(err?.data?.message || err.error);
+          }
+        }
+      };
+      
+      
+
     useEffect(() => {
         if (userInfo) {
             setName(userInfo.name)
@@ -55,23 +84,27 @@ const ProfilePage = () => {
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId='name' className='my-2'>
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type='name' placeholder='Enter name' value={name} onChange={(e) => setName(e.target.value)}></Form.Control>
+                    <Form.Control type='name' placeholder='Enter name' value={name} onChange={(e) => setName(e.target.value)} autoComplete='username'></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='email' className='my-2'>
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type='email' placeholder='Enter email' value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
+                    <Form.Control type='email' placeholder='Enter email' value={email} onChange={(e) => setEmail(e.target.value)} autoComplete='email'></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='password' className='my-2'>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type='password' placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)}></Form.Control>
+                    <Form.Control type='password' placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)} autoComplete='current-password'></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='confirm password' className='my-2'>
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
+                    <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} autoComplete='current-password'></Form.Control>
                 </Form.Group>
-
+                <div>
                 <Button type='submit' variant='primary' className='my-2'>Update</Button>
+                </div>
+                <div>
+                <Button type='button' variant='danger' className='my-2' onClick={handleDeleteProfile}>Delete Account</Button>
                 {isLoading && <Loading/>}
+                </div>
              </Form>   
         </Col>
     </Row>

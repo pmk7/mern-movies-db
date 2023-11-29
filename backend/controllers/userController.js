@@ -69,6 +69,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 const getUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id); // Find user by ID mongoose model method
 
+  // console.log(user);
   if (user) {
     res.status(200).json({
       _id: user._id,
@@ -125,12 +126,21 @@ const getUserByID = asyncHandler(async (req, res) => {
 });
 
 // @desc    Delete users
-// @route   DELETE /api/users
+// @route   DELETE /api/users/profile
 // @access  Private/Admin
-const deleteUser = asyncHandler(async (req, res) => {
-  res.send("Delete user");
-});
 
+const deleteProfile = asyncHandler(async (req, res) => {
+  const { userId } = req.body; // Get userId from req.body
+  const user = await User.findById(userId); // Find user by ID mongoose model method
+
+  if (!user) {
+    res.status(404).json({ message: "User not found" });
+    return;
+  }
+
+  await User.deleteOne({ _id: user._id });
+  res.status(200).json({ message: "User deleted" });
+});
 // @desc    Update users
 // @route   PUT /api/users/:id
 // @access  Private/Admin
@@ -146,6 +156,6 @@ export {
   updateUserProfile,
   getUsers,
   getUserByID,
-  deleteUser,
+  deleteProfile,
   updateUser,
 };

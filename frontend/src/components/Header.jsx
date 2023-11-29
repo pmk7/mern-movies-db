@@ -29,10 +29,6 @@ const Header = () => {
     }
   }
 
-  const deleteAccountHandler = () => {
-    console.log('delete account')
-
-  }
 
   
   return (
@@ -54,7 +50,6 @@ const Header = () => {
                             <NavDropdown.Item>Profile</NavDropdown.Item>
                           </LinkContainer>
                           <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
-                          <NavDropdown.Item onClick={deleteAccountHandler}>Delete Account</NavDropdown.Item>
                         </NavDropdown>
                       ) : (<LinkContainer to='/login'>
                         <Nav.Link><FaUser/> Login</Nav.Link>
