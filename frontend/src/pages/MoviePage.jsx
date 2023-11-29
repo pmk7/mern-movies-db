@@ -12,10 +12,9 @@ import Error from '../components/Error';
 const MoviePage = () => {
   const { id: movieId } = useParams();
   const {userInfo} = useSelector((state) => state.auth)
-  const { listItems } = useSelector((state) => state.list);
   const userId = userInfo?._id 
 
-
+  
   const [createList] = useCreateListMutation();
 
   const dispatch = useDispatch();
@@ -25,13 +24,7 @@ const MoviePage = () => {
 
   const {data:list   } = useGetMyListQuery(userId);
 
-  // console.log(movie)
-  // console.log(list.listItems.length)
-
-  // const addToListHandler = () => {
-  //   dispatch(addToList({...movie, movieId}));
-  //   navigate('/mymovies')
-  // }
+  console.log(list)
 
 
 
@@ -59,19 +52,9 @@ const MoviePage = () => {
   }
 
   const isMovieInList = () => { 
-    list.listItems.length > 0 && list.listItems.map((item) => {
-      if (item.movieId === movieId) {
-        return console.log(true)
-      } else {
-        return console.log(false)
-      }
-    } )
-
-  }
-  
-
-
-  
+      return list.listItems.some(item => item.movieId === movieId);
+    }
+    
 
   const redirectToLoginHandler = () => {
     navigate('/login')
@@ -96,14 +79,16 @@ const MoviePage = () => {
                 <Card.Img src={movie.image_url} alt={movie.name} />
                 <Card.Body>
                   <Card.Text>{movie.desc}</Card.Text>
-                  {userInfo && !isMovieInList ? 
-  <Button variant="primary" type='button' onClick={addToListHandler} >Add To My Movies</Button> 
-: 
-  (!userInfo ? 
-    <Button variant="secondary" type='button' onClick={redirectToLoginHandler} >Sign in to add To My Movies</Button> 
+                  {
+  !userInfo ? 
+    <Button variant="secondary" type='button' onClick={redirectToLoginHandler}>Sign in to Add To My Movies</Button> 
+  : isMovieInList() ? 
+    <Button variant="secondary" type='button' disabled>Already in My Movies</Button>
   : 
-    <Button variant="secondary" type='button' disabled >Already in My Movies</Button>)
-} 
+    <Button variant="primary" type='button' onClick={addToListHandler}>Add To My Movies</Button>
+}
+
+
                 </Card.Body>
               </Card>
             </Col>

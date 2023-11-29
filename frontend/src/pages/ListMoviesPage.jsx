@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link, Navigate} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
-// import { removeFromList  } from '../slices/listSlice';
 import { useGetMyListQuery, useDeleteMovieFromListMutation } from '../slices/listApiSlice';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,18 +16,16 @@ const ListMoviesPage = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    console.log(data.listItems)
  
 
     const [deleteMovieFromList] = useDeleteMovieFromListMutation();   
 
     useEffect(() => {
-        refetch()
-    }, [data])
+        refetch() 
+    }, [data.listItems])
 
-
-    // const list = useSelector((state) => state.list);
-    // const { listItems } = list;
-    // console.log(listItems)
 
     const removeFromListHandler = async (movieId) => {
         console.log('movieId',movieId)
