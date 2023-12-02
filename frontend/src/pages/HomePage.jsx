@@ -10,6 +10,7 @@ import Error from '../components/Error';
 import Sort from '../components/Sort';
 
 
+
 const HomePage = () => {
 const [movies, setMovies] = useState([]);
 
@@ -17,16 +18,14 @@ const updateMovies = (sortedMovies) => {
   setMovies(sortedMovies);
 };
   const {pageNumber, keyword} = useParams();
-  const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
+  const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber, sortOrder: 'highToLow'});
 
-
+  console.log(keyword)
   useEffect(() => {
     if (data) {
       setMovies(data.movies);
     }
   }, [data]);
-
-
 
   // TODO: remove lag between loading spinner and error message been displayed
 
@@ -42,8 +41,10 @@ const updateMovies = (sortedMovies) => {
         <>
           <Container className='d-flex justify-content-center align-items-center'>
             <Search/>
-            <Sort movies={movies} setMovies={setMovies} />
           </Container>
+          <Container className='my-1 d-flex justify-content-center align-items-center'>
+            <Sort movies={movies} setMovies={setMovies} />
+            </Container>  
           <Row className='mx-2'>
             {movies.map((movie) => (
               <Col key={movie._id} sm={12} md={6} lg={4} xl={3} className='text-center'>

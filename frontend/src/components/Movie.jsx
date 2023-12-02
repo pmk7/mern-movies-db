@@ -1,6 +1,8 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import { FcRating } from "react-icons/fc";
+
 
 
 const Movie = ({movie}) => {
@@ -20,7 +22,7 @@ const Movie = ({movie}) => {
             </Link>
             <Card.Text as='div'> 
                 <div className='my-1'>
-                    {movie.rating} / 10                
+                <strong>{movie.rating}</strong>      
                 </div>
             </Card.Text>
         </Card.Body>    

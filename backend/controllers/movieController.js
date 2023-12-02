@@ -34,8 +34,11 @@ const getMovies = asyncHandler(async (req, res) => {
     : {};
 
   const count = await Movie.countDocuments({ ...keyword });
+  const sortOrder = req.query.sortOrder === "asc" ? 1 : -1;
+  console.log(req.query.sortOrder);
 
   const movies = await Movie.find({ ...keyword })
+    .sort({ rating: sortOrder })
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   res.json({ movies, page: page, pages: Math.ceil(count / pageSize) });

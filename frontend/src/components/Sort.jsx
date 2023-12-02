@@ -8,31 +8,31 @@ const Sort = ({movies, setMovies}) => {
 
   const {pageNumber, keyword} = useParams();
   const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
-// console.log(data)
 
+// TODO: fix buttin sizing on small screen
 
+const sortMovies = (order) => {
+  const sortedMovies = [...data.movies].sort((a, b) => {
+    if (order === 'highToLow') {
+      return b.rating - a.rating;
+    } else {
+      return a.rating - b.rating;
+    }
+  });
+  setMovies(sortedMovies);
+};
 
-const sortMovies = () => {
-    const sortedMovies = [...data.movies].sort((a, b) => {
-      if (sortOrder === 'highToLow') {
-        return b.rating - a.rating;
-      } else {
-        return a.rating - b.rating;
-      }
-    });
-  
-    setMovies(sortedMovies);
-  };
-
-  const toggleSortOrder = () => {
-    setSortOrder(oldSortOrder => oldSortOrder === 'highToLow' ? 'lowToHigh' : 'highToLow');
-    sortMovies();
-  };
-
+const toggleSortOrder = () => {
+  const newSortOrder = sortOrder === 'highToLow' ? 'lowToHigh' : 'highToLow';
+  setSortOrder(newSortOrder);
+  sortMovies(newSortOrder);
+};
   
   return (
-    <Button onClick={toggleSortOrder}>
-      Sort by rating ({sortOrder === 'highToLow' ? 'High to Low' : 'Low to High'})
+    <Button onClick={toggleSortOrder} type="submit"
+    variant="primary"
+    className="my-2 mx-2">
+      Rating ({sortOrder === 'highToLow' ? 'High to Low' : 'Low to High'})
     </Button>
   );
 };
