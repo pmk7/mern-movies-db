@@ -8,6 +8,7 @@ import moviesRoutes from "./routes/moviesRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import listRoutes from "./routes/listRoutes.js";
 import { rateLimit } from "express-rate-limit";
+import lusca from "lusca";
 
 const port = process.env.PORT || 8000;
 
@@ -29,6 +30,8 @@ const limiter = rateLimit({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(limiter);
+// Add lusca CSRF middleware to prevent CSRF attacks
+app.use(lusca.csrf());
 
 // Cookie parser middleware
 app.use(cookieParser());
