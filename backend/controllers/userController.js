@@ -1,6 +1,7 @@
 import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
+import bcrypt from "bcryptjs";
 
 // @desc    Auth user & get token
 // @route   POST /api/users/login
@@ -86,26 +87,45 @@ const getUserProfile = asyncHandler(async (req, res) => {
 // @route   PUT /api/users/profile
 // @access  Private
 const updateUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id); // Find user by ID mongoose model method
+  const userId = req.user._id;
 
-  if (user) {
-    user.name = req.body.name || user.name; // If name is provided, use it, otherwise use existing name
-    user.email = req.body.email || user.email; // If email is provided, use it, otherwise use existing email
+  try {
+    // Create an object to store the updated user data
+    const updatedUserData = {};
 
-    if (req.body.password) {
-      user.password = req.body.password;
+    if (req.body.name) {
+      updatedUserData.name = req.body.name;
     }
 
-    const updatedUser = await user.save();
+    if (req.body.email) {
+      updatedUserData.email = req.body.email;
+    }
+
+    if (req.body.password) {
+      // Use bcrypt to securely hash the new password
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      updatedUserData.password = hashedPassword;
+    }
+
+    // Update the user data in the database
+    const updatedUser = await User.findByIdAndUpdate(userId, updatedUserData, {
+      new: true, // Return the updated user document
+      runValidators: true, // Run validators to ensure data integrity
+    });
+
+    if (!updatedUser) {
+      res.status(404).json({ message: "User not found" });
+      return;
+    }
+
     res.status(200).json({
       _id: updatedUser._id,
       name: updatedUser.name,
       email: updatedUser.email,
-      password: updatedUser.password,
     });
-  } else {
-    res.status(400);
-    throw new Error("Password is required");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
@@ -116,6 +136,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 const deleteProfile = asyncHandler(async (req, res) => {
   const { userId } = req.body;
 
+  // prevent nosql injection
   if (typeof userId !== "string") {
     res.status(400).json({ message: "Invalid user ID" });
     return;

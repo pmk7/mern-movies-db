@@ -9,6 +9,7 @@ import userRoutes from "./routes/userRoutes.js";
 import listRoutes from "./routes/listRoutes.js";
 import { rateLimit } from "express-rate-limit";
 import lusca from "lusca";
+import mongoSanitize from "express-mongo-sanitize";
 
 const port = process.env.PORT || 8000;
 
@@ -30,8 +31,17 @@ const limiter = rateLimit({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(limiter);
-// Add lusca CSRF middleware to prevent CSRF attacks
-// app.use(lusca.csrf());
+
+// // Add lusca CSRF middleware to prevent CSRF attacks
+// app.use(
+//   lusca({
+//     csrf: { cookie: true },
+//     xframe: "SAMEORIGIN",
+//     xssProtection: true,
+//   })
+// );
+
+app.use(mongoSanitize()); // Sanitize data
 
 // Cookie parser middleware
 app.use(cookieParser());
