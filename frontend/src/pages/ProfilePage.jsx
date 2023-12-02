@@ -94,7 +94,7 @@ const ProfilePage = () => {
                     dispatch(setCredentials(res));
                     toast.success('Profile updated successfully');
                     navigate('/');
-                    console.log(newPassword)
+
                 }
             
             } catch (err) {

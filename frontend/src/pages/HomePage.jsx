@@ -20,7 +20,6 @@ const updateMovies = (sortedMovies) => {
   const {pageNumber, keyword} = useParams();
   const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber, sortOrder: 'highToLow'});
 
-  console.log(keyword)
   useEffect(() => {
     if (data) {
       setMovies(data.movies);

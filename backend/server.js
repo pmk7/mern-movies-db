@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(limiter);
 // Add lusca CSRF middleware to prevent CSRF attacks
-app.use(lusca.csrf());
+// app.use(lusca.csrf());
 
 // Cookie parser middleware
 app.use(cookieParser());
