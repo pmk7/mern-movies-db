@@ -83,7 +83,7 @@ const MoviePage = () => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <h5><strong>Rating</strong></h5>
-                  {movie.rating} / 10
+                  {movie.rating}
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <h5><strong>Starring</strong></h5>

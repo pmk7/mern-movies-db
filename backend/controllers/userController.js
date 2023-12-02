@@ -116,7 +116,6 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 const deleteProfile = asyncHandler(async (req, res) => {
   const { userId } = req.body;
 
-  // In the following example, an express handler attempts to delete a single document from a MongoDB collection. The document to be deleted is identified by its _id field, which is constructed from user input. The user input may contain a query object, so this code is vulnerable to a NoSQL injection attack.
   if (typeof userId !== "string") {
     res.status(400).json({ message: "Invalid user ID" });
     return;
@@ -127,7 +126,7 @@ const deleteProfile = asyncHandler(async (req, res) => {
     return;
   }
 
-  await User.deleteOne({ _id: user._id });
+  await User.deleteOne({ _id: { $eq: userId } });
   res.status(200).json({ message: "User deleted" });
 });
 
