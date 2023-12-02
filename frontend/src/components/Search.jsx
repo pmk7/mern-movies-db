@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import {useParams, useNavigate } from 'react-router-dom'
+import DOMPurify from 'dompurify';
 
 
 
@@ -9,14 +10,16 @@ const Search = () => {
   const {keyword: urlKeyword} = useParams()
   const [keyword, setKeyword] = useState(urlKeyword || '')
 
+  
   const submitHandler = (e) => {
-    e.preventDefault()
-    if (keyword.trim()) {
-      navigate(`/search/${keyword}`)
+    e.preventDefault();
+    const sanitizedKeyword = DOMPurify.sanitize(keyword.trim());
+    if (sanitizedKeyword) {
+      navigate(`/search/${sanitizedKeyword}`);
     } else {
-      navigate('/')
+      navigate('/');
     }
-  }
+  };
 
 
 

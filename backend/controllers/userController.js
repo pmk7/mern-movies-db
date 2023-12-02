@@ -101,27 +101,13 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       _id: updatedUser._id,
       name: updatedUser.name,
       email: updatedUser.email,
-      isAdmin: updatedUser.isAdmin,
+      password: updatedUser.password,
     });
   } else {
     res.status(400);
     throw new Error("Password is required");
   }
 });
-
-// @desc    Get users
-// @route   GET /api/users
-// @access  Private/Admin
-// const getUsers = asyncHandler(async (req, res) => {
-//   res.send("Get users");
-// });
-
-// // @desc    Delete user by id
-// // @route   GET /api/users/:id
-// // @access  Private/Admin
-// const getUserByID = asyncHandler(async (req, res) => {
-//   res.send("Get user by id");
-// });
 
 // @desc    Delete users
 // @route   DELETE /api/users/profile

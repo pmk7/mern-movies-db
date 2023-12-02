@@ -28,6 +28,8 @@ const sortMovies = () => {
     setSortOrder(oldSortOrder => oldSortOrder === 'highToLow' ? 'lowToHigh' : 'highToLow');
     sortMovies();
   };
+
+  
   return (
     <Button onClick={toggleSortOrder}>
       Sort by rating ({sortOrder === 'highToLow' ? 'High to Low' : 'Low to High'})

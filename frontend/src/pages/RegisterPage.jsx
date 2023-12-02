@@ -6,7 +6,8 @@ import {FormContainer} from '../components/FormContainer'
 import Loading from "../components/Loading";
 import { useRegisterMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
-import {toast} from 'react-toastify'
+import {toast} from 'react-toastify';
+import DOMPurify from 'dompurify';
 
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
@@ -51,9 +52,13 @@ const RegisterPage = () => {
             return
         } else {
             try {
-                const res = await register({ name, email, password}).unwrap() // returns promise
-                dispatch(setCredentials({...res}))
-                navigate(redirect)
+                const sanitizedEmail = DOMPurify.sanitize(email);
+                const sanitizedPassword = DOMPurify.sanitize(password);
+                const sanitizedName = DOMPurify.sanitize(name);
+
+                const res = await register({ name: sanitizedName, email: sanitizedEmail, password: sanitizedPassword }).unwrap();
+                dispatch(setCredentials({ ...res }));
+                navigate(redirect);
             } catch (err) {
                 toast.error(err?.data?.message || err.error)
             }
@@ -98,10 +103,7 @@ const RegisterPage = () => {
                         Signed up? <Link to={redirect ? `/login?redirect=${redirect}`: '/login'}>Login</Link>
                     </Col>    
                 </Row>
-          </FormContainer>   
-                    
-
-
+          </FormContainer> 
     )
 }
 
