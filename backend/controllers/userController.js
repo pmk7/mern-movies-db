@@ -9,7 +9,8 @@ import bcrypt from "bcryptjs";
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email }); // Find user by email mongoose model method
+  // add { $eq: email } to prevent nosql injection
+  const user = await User.findOne({ email: { $eq: email } }); // Find user by email mongoose model method
 
   if (user && (await user.matchPassword(password))) {
     generateToken(res, user._id); // Generate token

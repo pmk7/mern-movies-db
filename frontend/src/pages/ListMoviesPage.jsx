@@ -29,6 +29,7 @@ const ListMoviesPage = () => {
           deleteMovieFromList(movieId);
           toast.success('Movie removed from your list successfully');
           setNewUpdate(true)
+          navigate('/')
         } catch (error) {
           console.log(error);
         }
@@ -40,7 +41,7 @@ const ListMoviesPage = () => {
         refetch();
         console.log(data)
         }
-        ,[data]);
+        ,[data, refetch]);
 
     // TODO: ensure when list items change component is re-rendered and state is updated    
 

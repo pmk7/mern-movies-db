@@ -16,7 +16,8 @@ const createList = asyncHandler(async (req, res) => {
 
   try {
     // Check if a list with the user id exists
-    let list = await List.findOne({ user: user });
+    // add { $eq: user } to prevent nosql injection
+    let list = await List.findOne({ user: { $eq: user } });
 
     if (list) {
       // If the list exists, check if the movie is already in the list
