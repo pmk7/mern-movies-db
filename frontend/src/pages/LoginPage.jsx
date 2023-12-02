@@ -7,6 +7,7 @@ import Loading from "../components/Loading";
 import { useLoginMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import {toast} from 'react-toastify'
+import DOMPurify from 'dompurify';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('')
@@ -30,17 +31,22 @@ const LoginPage = () => {
         }
     }, [userInfo, redirect, navigate])
     
-    const submitHandler = async (e) =>{
-        e.preventDefault()
-        try {
-            const res = await login({ email, password}).unwrap() // returns promise
-            dispatch(setCredentials({...res}))
-            navigate(redirect)
-        } catch (err) {
-            toast.error(err?.data?.message || err.error)
-        }
 
-    }
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        try {
+            // Sanitize inputs
+            const sanitizedEmail = DOMPurify.sanitize(email);
+            const sanitizedPassword = DOMPurify.sanitize(password);
+
+            const res = await login({ email: sanitizedEmail, password: sanitizedPassword }).unwrap();
+            dispatch(setCredentials({ ...res }));
+            navigate(redirect);
+        } catch (err) {
+            toast.error(err?.data?.message || err.error);
+        }
+    };
+    
     return (
 
         <FormContainer>

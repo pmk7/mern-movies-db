@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useSelector , useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
@@ -10,6 +10,7 @@ import Loading from '../components/Loading';
 
 
 const ListMoviesPage = () => {
+    const [newUpdate, setNewUpdate] = useState(false)
     const {userInfo} = useSelector((state) => state.auth)
 
     const userId = userInfo._id 
@@ -22,16 +23,24 @@ const ListMoviesPage = () => {
 
     const  [deleteMovieFromList] = useDeleteMovieFromListMutation();   
 
-    const removeFromListHandler = async (movieId) => {
+    const removeFromListHandler = (movieId) => {
         try {
           console.log('movieId', movieId);
-          const res = await deleteMovieFromList(movieId).unwrap();
+          deleteMovieFromList(movieId);
           toast.success('Movie removed from your list successfully');
-          navigate('/');
+          setNewUpdate(true)
         } catch (error) {
           console.log(error);
         }
       };
+
+      console.log(data)
+
+      useEffect(() => {
+        refetch();
+        console.log(data)
+        }
+        ,[data]);
 
     // TODO: ensure when list items change component is re-rendered and state is updated    
 

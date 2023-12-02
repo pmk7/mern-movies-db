@@ -11,6 +11,9 @@ import DOMPurify from 'dompurify';
 
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
+const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+
+
 // TODO: Sanitize inputs, code injection
 
 
@@ -45,6 +48,10 @@ const RegisterPage = () => {
         e.preventDefault()
         if (!passwordRegex.test(password)) {
             toast.error('Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character')
+            return
+        }
+        if (!nameRegex.test(name)) {
+            toast.error('Name must be at least 2 characters long and must not contain numbers or special characters')
             return
         }
         else if (password !== confirmPassword) {
