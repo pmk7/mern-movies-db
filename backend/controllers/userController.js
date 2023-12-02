@@ -144,6 +144,11 @@ const deleteProfile = asyncHandler(async (req, res) => {
     res.status(400).json({ message: "Invalid user ID" });
     return;
   }
+
+  if (password === '') {
+    res.status(400).json({ message: "Passwords do not match" });
+    return;
+  }
   const user = await User.findById(userId);
   if (!user) {
     res.status(404).json({ message: "User not found" });

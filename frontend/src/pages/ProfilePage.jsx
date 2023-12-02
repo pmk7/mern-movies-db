@@ -43,8 +43,6 @@ const ProfilePage = () => {
         return true;
     };
 
-
-
     const submitHandler = async (e) => {
         e.preventDefault();
         if (password === '') {  
@@ -103,13 +101,20 @@ const ProfilePage = () => {
         }
     }
 
+    // TODO: fix delete profile, currently throws error password not defined
+
     const handleDeleteProfile = async () => {
         const userId = userInfo._id;
-        console.log(userId);
         try {
-          const res = await deleteProfile(userId).unwrap(); // Pass userId directly
-          console.log(res);
-          // Handle post-deletion logic
+          if(password === '') {
+            toast.error('Password cannot be empty');
+            return;
+            }
+            if (password !== confirmPassword) {
+                toast.error('Passwords do not match');
+                return;
+            } 
+          const res = await deleteProfile(userId).unwrap(); 
           toast.success('Profile deleted successfully');
           dispatch(logout());
           navigate('/');

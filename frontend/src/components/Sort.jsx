@@ -9,7 +9,6 @@ const Sort = ({movies, setMovies}) => {
   const {pageNumber, keyword} = useParams();
   const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
 
-// TODO: fix buttin sizing on small screen
 
 const sortMovies = (order) => {
   const sortedMovies = [...data.movies].sort((a, b) => {
@@ -32,7 +31,7 @@ const toggleSortOrder = () => {
     <Button onClick={toggleSortOrder} type="submit"
     variant="primary"
     className="my-2 mx-2">
-      Rating ({sortOrder === 'highToLow' ? 'High to Low' : 'Low to High'})
+      Sort by Rating ({sortOrder === 'highToLow' ? 'High to Low' : 'Low to High'})
     </Button>
   );
 };
