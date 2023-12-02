@@ -30,7 +30,9 @@ const authUser = asyncHandler(async (req, res) => {
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
-  const userExists = await User.findOne({ email });
+
+  // add { $eq: email } to prevent nosql injection
+  const userExists = await User.findOne({ email: { $eq: email } });
 
   if (userExists) {
     res.status(400);
