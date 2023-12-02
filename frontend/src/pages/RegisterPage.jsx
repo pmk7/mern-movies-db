@@ -11,7 +11,9 @@ import DOMPurify from 'dompurify';
 
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
-const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+const nameRegex = /^[a-zA-Z]+([- '][a-zA-Z]+)*$/;
+
+
 
 
 // TODO: Sanitize inputs, code injection
