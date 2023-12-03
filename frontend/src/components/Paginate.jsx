@@ -2,7 +2,6 @@ import { Pagination } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import React from 'react'
 
-// TODO: fix pagination so only pages returning keyword are shown, if user enters a keyword
 
 const Paginate = ({ pages, page, keyword = '' }) => {
   const pageNumbersToShow = 3;

@@ -41,7 +41,6 @@ const ListMoviesPage = () => {
         }
         ,[data, refetch]);
 
-    // TODO: ensure when list items change component is re-rendered and state is updated    
 
     return (
         <>

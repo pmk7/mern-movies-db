@@ -28,14 +28,14 @@ const updateMovies = (sortedMovies) => {
     }
   }, [data]);
 
-  // TODO: remove lag between loading spinner and error message been displayed
 
-  // TODO: sort entire dataset ofmovies by rating, currently just sorting what's on the page by rating
 
   return (
     <>
       {isLoading ? (
         <Loading />
+      ) : error ? (
+        <Error/>
       ) : (
         <>
           <Container className='d-flex justify-content-center align-items-center'>
