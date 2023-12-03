@@ -25,7 +25,7 @@ MoviesDB is a full stack web app built using the MERN stack which allows users t
 Install backend dependencies, from root: `npm install` 
 Frontend: `cd frontend` 
 Install frontend dependencies: `npm install`
-3. Start the application (frontend: 3000 & backend: 9000) from root: `npm run dev` 
+3. Start the application (frontend: localhost:3000 & backend: localhost:9000) from root: `npm run dev` 
 4. Backend only `npm run server`
 
 
@@ -33,6 +33,8 @@ Install frontend dependencies: `npm install`
 - Rename env.example file to .env file and add your personal MongoDB URI. See here for more details about to get a connection string: `https://www.mongodb.com/docs/guides/atlas/connection-string/`
 
 ## Seed Database
+From the root: 
+
 1. Import data: `npm run data:import`
 2. Destroy Data: `npm run data:destory`
 
