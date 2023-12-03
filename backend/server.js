@@ -10,6 +10,12 @@ import listRoutes from "./routes/listRoutes.js";
 import { rateLimit } from "express-rate-limit";
 import lusca from "lusca";
 import mongoSanitize from "express-mongo-sanitize";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const port = process.env.PORT || 8000;
 
@@ -27,33 +33,35 @@ const limiter = rateLimit({
   // store: ... , // Use an external store for consistency across multiple server instances.
 });
 
+if (process.env.NODE_ENV === "production") {
+  // set static folder
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+  // any route that is not api will hit this
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("Server is ready");
+  });
+}
+
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(limiter);
-
-// // Add lusca CSRF middleware to prevent CSRF attacks
-// app.use(
-//   lusca({
-//     csrf: { cookie: true },
-//     xframe: "SAMEORIGIN",
-//     xssProtection: true,
-//   })
-// );
-
-app.use(mongoSanitize()); // Sanitize data
 
 // Cookie parser middleware
 app.use(cookieParser());
-
-app.get("/", (req, res) => {
-  res.send("Server is ready");
-});
 
 // Routes
 app.use("/api/movies", moviesRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/list", listRoutes);
+
+// Security middleware
+app.use(mongoSanitize()); // Sanitize data
+app.use(limiter); // Limit requests
 
 // Error middleware
 app.use(notFound);

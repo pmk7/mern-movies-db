@@ -10,7 +10,6 @@ import {logout} from '../slices/authSlice'
 
 
 const Header = () => {
-  const {listItems} = useSelector((state) => state.list)
   const {userInfo} = useSelector((state) => state.auth)
 
   const dispatch = useDispatch()
