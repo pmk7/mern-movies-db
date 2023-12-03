@@ -50,11 +50,12 @@ const ListMoviesPage = () => {
         <Link className='btn btn-dark my-4 mx-2' to='/'>
         Back
       </Link>
+      <h1 className='text-center'>My List</h1>
       {isLoading ? <Loading /> : (
         <Row >
             <Col md={8}>
                 {(!data || !data.listItems || data.listItems.length === 0) ? (<h2>So empty... let's add some movies 
-                </h2>) : (
+                </h2>) : (  
                     <ListGroup variant='flush'>
                         {data.listItems.map((item) => (
                             <ListGroup.Item key={item.movieId}>

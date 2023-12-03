@@ -11,7 +11,6 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
         params: {
           keyword,
           pageNumber,
-          sortOrder,
         },
       }),
       keepUnusedDataFor: 10,
@@ -20,6 +19,13 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
       // get request to /api/movies/title/:id
       query: (movieId) => ({
         url: `${MOVIES_URL}/${movieId}`,
+      }),
+      keepUnusedDataFor: 10,
+    }),
+    sortMoviesByRating: builder.query({
+      // get request to /api/movies/sort/rating
+      query: () => ({
+        url: `${MOVIES_URL}/sort/rating`,
       }),
       keepUnusedDataFor: 10,
     }),

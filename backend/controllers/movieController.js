@@ -13,31 +13,28 @@ const getMovies = asyncHandler(async (req, res) => {
         $or: [
           {
             name: {
-              $regex: req.query.keyword.replace(/-/g, "[-]*"),
+              $regex: req.query.keyword.split(" ").join("[-]*"),
               $options: "i",
             },
           },
           {
             actors: {
-              $regex: req.query.keyword.replace(/-/g, "[-]*"),
+              $regex: req.query.keyword.split(" ").join("[-]*"),
               $options: "i",
             },
           },
           {
             directors: {
-              $regex: req.query.keyword.replace(/-/g, "[-]*"),
+              $regex: req.query.keyword.split(" ").join("[-]*"),
               $options: "i",
             },
           },
         ],
       }
     : {};
-
   const count = await Movie.countDocuments({ ...keyword });
-  const sortOrder = req.query.sortOrder === "asc" ? 1 : -1;
 
   const movies = await Movie.find({ ...keyword })
-    .sort({ rating: sortOrder })
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   res.json({ movies, page: page, pages: Math.ceil(count / pageSize) });
@@ -56,5 +53,11 @@ const getMovieById = asyncHandler(async (req, res) => {
     throw new Error("Resource not found");
   }
 });
+
+
+const sortMoviesByRating = asyncHandler(async (req, res) => {
+  const movies = await Movie.find({}).sort({ rating: -1 });
+  res.json(movies);
+}
 
 export { getMovies, getMovieById };
