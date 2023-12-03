@@ -33,20 +33,6 @@ const limiter = rateLimit({
   // store: ... , // Use an external store for consistency across multiple server instances.
 });
 
-if (process.env.NODE_ENV === "production") {
-  // set static folder
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
-
-  // any route that is not api will hit this
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("Server is ready");
-  });
-}
-
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -62,6 +48,20 @@ app.use(limiter); // Limit requests
 app.use("/api/movies", moviesRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/list", listRoutes);
+
+if (process.env.NODE_ENV === "production") {
+  // set static folder
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+  // any route that is not api will hit this
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("Server is ready");
+  });
+}
 
 // Error middleware
 app.use(notFound);
