@@ -7,11 +7,9 @@ const Sort = ({movies, setMovies}) => {
   const [sortOrder, setSortOrder] = useState('highToLow');
 
   const {pageNumber, keyword} = useParams();
-  const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
+  const { data } = useGetMoviesQuery({keyword, pageNumber});
 
-  const { data: sortedData, error: sortedError, isLoading: sortedIsLoading } = useSortMoviesByRatingQuery(sortOrder);
 
-  // console.log(sortedData)
 
 
 const sortMovies = (order) => {

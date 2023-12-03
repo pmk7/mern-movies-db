@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
-import { useGetMoviesQuery } from '../slices/moviesApiSlice';
 
 
 const Search = () => {
@@ -12,13 +11,8 @@ const Search = () => {
 
   const inputRef = useRef(null); 
 
-  const keywordRef = useRef(keyword);
 
-  const { data, error, isLoading } = useGetMoviesQuery({ keyword, pageNumber });
-
-  // TODO: implement fuzzy search
-
-
+  // TODO: implement fuzzy search, partially 
 
   const submitHandler = (e) => {
     e.preventDefault();

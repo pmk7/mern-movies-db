@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Outlet />
       </Container>
       <Footer />
-      <ToastContainer />
+      <ToastContainer position={toast.POSITION.BOTTOM_RIGHT} autoClose={3000} />
     </>
   );
 };

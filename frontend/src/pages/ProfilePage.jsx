@@ -7,7 +7,6 @@ import { useProfileMutation, useDeleteProfileMutation } from '../slices/usersApi
 import Loading from '../components/Loading'
 import {toast} from 'react-toastify'
 import { setCredentials } from '../slices/authSlice'
-import { useLogoutMutation } from '../slices/usersApiSlice'
 import {logout} from '../slices/authSlice'
 import DOMPurify from 'dompurify';
 
