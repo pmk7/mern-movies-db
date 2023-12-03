@@ -10,7 +10,7 @@ import listRoutes from "./routes/listRoutes.js";
 import { rateLimit } from "express-rate-limit";
 import lusca from "lusca";
 import mongoSanitize from "express-mongo-sanitize";
-
+import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -51,6 +51,7 @@ app.use("/api/list", listRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // set static folder
+  const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, "../frontend/build")));
 
   // any route that is not api will hit this
@@ -58,6 +59,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
   });
 } else {
+  const __dirname = path.resolve();
   app.get("/", (req, res) => {
     res.send("Server is ready");
   });
