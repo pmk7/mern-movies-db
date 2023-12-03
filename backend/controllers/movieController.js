@@ -54,10 +54,13 @@ const getMovieById = asyncHandler(async (req, res) => {
   }
 });
 
-
+// @desc    Sort movies by rating
+// @route   GET /api/movies/sort/rating
+// @access  Public
 const sortMoviesByRating = asyncHandler(async (req, res) => {
-  const movies = await Movie.find({}).sort({ rating: -1 });
+  console.log(req.query.sortOrder);
+  const sortOrder = req.query.sortOrder === "lowToHigh" ? 1 : -1;
+  const movies = await Movie.find({}).sort({ rating: sortOrder });
   res.json(movies);
-}
-
-export { getMovies, getMovieById };
+});
+export { getMovies, getMovieById, sortMoviesByRating };

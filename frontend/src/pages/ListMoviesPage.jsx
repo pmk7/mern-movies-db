@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useSelector , useDispatch} from 'react-redux';
+import { useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap';
 import { useGetMyListQuery, useDeleteMovieFromListMutation } from '../slices/listApiSlice';
@@ -18,7 +18,6 @@ const ListMoviesPage = () => {
     const {data, refetch, isLoading } = useGetMyListQuery(userId);
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
  
 
     const  [deleteMovieFromList] = useDeleteMovieFromListMutation();   

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useGetMoviesQuery } from '../slices/moviesApiSlice';
+import { useGetMoviesQuery, useSortMoviesByRatingQuery } from '../slices/moviesApiSlice';
 import {useParams} from 'react-router-dom';
 
 const Sort = ({movies, setMovies}) => {
@@ -8,6 +8,10 @@ const Sort = ({movies, setMovies}) => {
 
   const {pageNumber, keyword} = useParams();
   const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
+
+  const { data: sortedData, error: sortedError, isLoading: sortedIsLoading } = useSortMoviesByRatingQuery(sortOrder);
+
+  // console.log(sortedData)
 
 
 const sortMovies = (order) => {

@@ -137,25 +137,15 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 
 const deleteProfile = asyncHandler(async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.body; // Get userId from req.body
+  const user = await User.findById(userId); // Find user by ID mongoose model method
 
-  // prevent nosql injection
-  if (typeof userId !== "string") {
-    res.status(400).json({ message: "Invalid user ID" });
-    return;
-  }
-
-  if (password === '') {
-    res.status(400).json({ message: "Passwords do not match" });
-    return;
-  }
-  const user = await User.findById(userId);
   if (!user) {
     res.status(404).json({ message: "User not found" });
     return;
   }
 
-  await User.deleteOne({ _id: { $eq: userId } });
+  await User.deleteOne({ _id: user._id });
   res.status(200).json({ message: "User deleted" });
 });
 

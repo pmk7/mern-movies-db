@@ -43,7 +43,7 @@ const ProfilePage = () => {
         return true;
     };
 
-    const submitHandler = async (e) => {
+    const submitUpdateProfileHandler = async (e) => {
         e.preventDefault();
         if (password === '') {  
             toast.error('Password cannot be empty');
@@ -101,35 +101,42 @@ const ProfilePage = () => {
         }
     }
 
-    // TODO: fix delete profile, currently throws error password not defined
+const handleDeleteProfile = async () => {
+  const userId = userInfo._id;
 
-    const handleDeleteProfile = async () => {
-        const userId = userInfo._id;
-        try {
-          if(password === '') {
-            toast.error('Password cannot be empty');
-            return;
-            }
-            if (password !== confirmPassword) {
-                toast.error('Passwords do not match');
-                return;
-            } 
-          const res = await deleteProfile(userId).unwrap(); 
-          toast.success('Profile deleted successfully');
-          dispatch(logout());
-          navigate('/');
-        } catch (err) {
-          if (err.status === 'PARSING_ERROR') {
-            // Handle parsing error specifically
-            console.error('Parsing error:', err);
-          } else {
-            // Handle other types of errors
-            toast.error(err?.data?.message || err.error);
-          }
-        }
-      };
-      
-      
+  if (password === '') {
+    toast.error('Password cannot be empty');
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    toast.error('Passwords do not match');
+    return;
+  }
+
+  // Confirm deletion
+  const confirmDelete = window.confirm('Are you sure you want to delete your account? This action cannot be undone.');
+  if (!confirmDelete) {
+    return;
+  }
+
+  try {
+    const res = await deleteProfile(userId).unwrap(); // Pass userId directly
+    console.log(res);
+    // Handle post-deletion logic
+    toast.success('Profile deleted successfully');
+    dispatch(logout());
+    navigate('/');
+  } catch (err) {
+    if (err.status === 'PARSING_ERROR') {
+      // Handle parsing error specifically
+      console.error('Parsing error:', err);
+    } else {
+      // Handle other types of errors
+      toast.error(err?.data?.message || err.error);
+    }
+  }
+};
 
     useEffect(() => {
         if (userInfo) {
@@ -142,7 +149,7 @@ const ProfilePage = () => {
     <Row> 
         <Col md={4}>
             <h2 className='my-3'>User Profile</h2>
-            <Form onSubmit={submitHandler}>
+            <Form onSubmit={submitUpdateProfileHandler}>
                 <Form.Group controlId='name' className='my-2'>
                     <Form.Label>Name</Form.Label>
                     <Form.Control type='name' placeholder='Enter name' value={name} onChange={(e) => setName(e.target.value)} autoComplete='username'></Form.Control>
@@ -161,7 +168,7 @@ const ProfilePage = () => {
                 </Form.Group>
                 <Form.Group controlId='new password' className='my-2'>
                     <Form.Label>New Password</Form.Label>
-                    <Form.Control type='password' placeholder='New Password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} autoComplete='current-password'></Form.Control>
+                    <Form.Control type='password' placeholder='New Password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} autoComplete='new-password'></Form.Control>
                 </Form.Group>
                 <div>
                 <Button type='submit' variant='primary' className='my-2'>Update</Button>

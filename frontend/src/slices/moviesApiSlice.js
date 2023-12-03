@@ -24,12 +24,19 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
     }),
     sortMoviesByRating: builder.query({
       // get request to /api/movies/sort/rating
-      query: () => ({
+      query: (sortOrder) => ({
         url: `${MOVIES_URL}/sort/rating`,
+        params: {
+          sortOrder,
+        },
       }),
       keepUnusedDataFor: 10,
     }),
   }),
 });
 
-export const { useGetMoviesQuery, useGetMovieDetailsQuery } = moviesApiSlice;
+export const {
+  useGetMoviesQuery,
+  useGetMovieDetailsQuery,
+  useSortMoviesByRatingQuery,
+} = moviesApiSlice;

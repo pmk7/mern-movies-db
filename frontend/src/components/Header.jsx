@@ -38,8 +38,8 @@ const Header = () => {
               <LinkContainer to='/'>
                 <Navbar.Brand><MdLocalMovies/> MoviesDB</Navbar.Brand>
               </LinkContainer>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" className='mx-2' />
+                <Navbar.Collapse id="basic-navbar-nav" >
                     <Nav className="ms-auto">
                       <LinkContainer to='/mymovies'>
                         <Nav.Link><FaClipboardCheck/> MyMovies</Nav.Link>

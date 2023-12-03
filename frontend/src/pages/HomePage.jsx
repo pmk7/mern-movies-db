@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 import Search from '../components/Search';
 import Movie from '../components/Movie';
 import Loading from '../components/Loading';
-import { useGetMoviesQuery } from '../slices/moviesApiSlice';
+import { useGetMoviesQuery, useSortMoviesByRatingQuery } from '../slices/moviesApiSlice';
 import Paginate from '../components/Paginate';
 import Error from '../components/Error';
 import Sort from '../components/Sort';
@@ -18,7 +18,9 @@ const updateMovies = (sortedMovies) => {
   setMovies(sortedMovies);
 };
   const {pageNumber, keyword} = useParams();
-  const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber, sortOrder: 'highToLow'});
+  const { data, error, isLoading } = useGetMoviesQuery({keyword, pageNumber});
+
+  
 
   useEffect(() => {
     if (data) {

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import DOMPurify from 'dompurify';
@@ -33,7 +33,7 @@ const Search = () => {
 
   return (
     <>
-      <Form onSubmit={submitHandler} size="lg" className="my-3 w-75 mx-2">
+      <Form onSubmit={submitHandler} size="lg" className="my-2 w-75 mx-2">
         <Form.Control
           type="text"
           name="q"
@@ -46,7 +46,7 @@ const Search = () => {
       <Button
         type="submit"
         variant="primary"
-        className="my-4 mx-2"
+        className="my-4"
         onClick={submitHandler}
       >
         Search
