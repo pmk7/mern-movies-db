@@ -36,8 +36,6 @@ const updateMovies = (sortedMovies) => {
     <>
       {isLoading ? (
         <Loading />
-      ) : error ? (
-        <Error/>
       ) : (
         <>
           <Container className='d-flex justify-content-center align-items-center'>
