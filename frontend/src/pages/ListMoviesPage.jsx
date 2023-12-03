@@ -24,7 +24,6 @@ const ListMoviesPage = () => {
 
     const removeFromListHandler = (movieId) => {
         try {
-          console.log('movieId', movieId);
           deleteMovieFromList(movieId);
           toast.success('Movie removed from your list successfully');
           setNewUpdate(true)
@@ -34,7 +33,7 @@ const ListMoviesPage = () => {
         }
       };
 
-      console.log(data)
+
 
       useEffect(() => {
         refetch();

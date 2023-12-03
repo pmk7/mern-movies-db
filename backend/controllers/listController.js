@@ -6,8 +6,6 @@ import List from "../models/listModel.js";
 // @route   POST /api/list
 // @access  Private
 const createList = asyncHandler(async (req, res) => {
-  console.log("req.body", req.body);
-
   const { user, listItems } = req.body;
 
   if (!Array.isArray(listItems)) {
@@ -63,7 +61,6 @@ const addToList = asyncHandler(async (req, res) => {
 
 const getMyList = asyncHandler(async (req, res) => {
   const list = await List.findOne({ user: req.params.id });
-  console.log(list);
 
   if (list) {
     res.json(list);
@@ -80,15 +77,12 @@ const deleteMovieFromList = asyncHandler(async (req, res) => {
   const movieId = req.params.id;
 
   const listWithMovie = await List.findOne({ "listItems.movieId": movieId });
-  console.log(listWithMovie);
 
   const updatedList = await List.findOneAndUpdate(
     { "listItems.movieId": movieId },
     { $pull: { listItems: { movieId: movieId } } },
     { new: true }
   );
-
-  console.log("updatedList", updatedList);
 });
 
 export { createList, getMyList, addToList, deleteMovieFromList };

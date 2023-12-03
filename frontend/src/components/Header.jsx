@@ -20,7 +20,6 @@ const Header = () => {
 
   const logoutHandler =  async () => {
     try {
-      console.log('click')
       await logoutApiCall().unwrap();
       dispatch(logout())
       navigate('/login')

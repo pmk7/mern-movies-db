@@ -120,18 +120,14 @@ const handleDeleteProfile = async () => {
   }
 
   try {
-    const res = await deleteProfile(userId).unwrap(); // Pass userId directly
-    console.log(res);
-    // Handle post-deletion logic
+    const res = await deleteProfile(userId).unwrap(); // Pass userId directly to deleteProfile
     toast.success('Profile deleted successfully');
     dispatch(logout());
     navigate('/');
   } catch (err) {
     if (err.status === 'PARSING_ERROR') {
-      // Handle parsing error specifically
       console.error('Parsing error:', err);
     } else {
-      // Handle other types of errors
       toast.error(err?.data?.message || err.error);
     }
   }
