@@ -10,7 +10,7 @@ import listRoutes from "./routes/listRoutes.js";
 import { rateLimit } from "express-rate-limit";
 import lusca from "lusca";
 import mongoSanitize from "express-mongo-sanitize";
-import path from "path";
+
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -54,14 +54,14 @@ app.use(express.urlencoded({ extended: true }));
 // Cookie parser middleware
 app.use(cookieParser());
 
+// Security middleware
+app.use(mongoSanitize()); // Sanitize data
+app.use(limiter); // Limit requests
+
 // Routes
 app.use("/api/movies", moviesRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/list", listRoutes);
-
-// Security middleware
-app.use(mongoSanitize()); // Sanitize data
-app.use(limiter); // Limit requests
 
 // Error middleware
 app.use(notFound);
