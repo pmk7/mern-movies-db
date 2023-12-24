@@ -12,7 +12,7 @@ const Movie = ({movie}) => {
 
     <Card className='my-3 p-1'onMouseEnter={() => setIsHovered(true)}
     onMouseLeave={() => setIsHovered(false)}>
-      <Link to={`/movie/${movie._id}`}> 
+      <Link to={`/movies/${movie._id}`}> 
         <Card.Img src={movie?.image_url} variant='top' style={{ width: '100%', height: '20rem', objectFit: 'cover' }}  />
         {isHovered && (
           <div style={{

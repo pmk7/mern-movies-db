@@ -58,12 +58,12 @@ const ListMoviesPage = () => {
                             <ListGroup.Item key={item.movieId}>
                                 <Row>
                                     <Col md={3}>
-                                        <Link to={`/movie/${item.movieId}`}>
+                                        <Link to={`/movies/${item.movieId}`}>
                                             <Card.Img src={item.image_url} alt={item.name} />
                                         </Link>
                                     </Col>
                                     <Col md={3} style={{marginBottom: '1rem'}}>
-                                        <Link to={`/movie/${item.movieId}`}>
+                                        <Link to={`/movies/${item.movieId}`}>
                                             {item.name}
                                         </Link> 
                                     </Col>
