@@ -10,8 +10,6 @@ import { setCredentials } from '../slices/authSlice'
 import {logout} from '../slices/authSlice'
 import DOMPurify from 'dompurify';
 
-
-
 // TODO: verify by logging in and redirecting to homepage I'm fulfilling this requirement: protect repeat inserts e.g. page reload??
 
 // TODO: Sanitize inputs, code injection
