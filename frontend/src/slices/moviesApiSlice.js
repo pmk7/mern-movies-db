@@ -16,7 +16,7 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 10,
     }),
     getMovieDetails: builder.query({
-      // get request to /api/movies/title/:id
+      // get request to /api/movies/:id
       query: (movieId) => ({
         url: `${MOVIES_URL}/${movieId}`,
       }),
