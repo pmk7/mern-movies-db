@@ -45,9 +45,9 @@ app.use(mongoSanitize()); // Sanitize data
 app.use(limiter); // Limit requests
 
 // Routes
-app.use("/api/movies", moviesRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/list", listRoutes);
+app.use("/api/v1/movies", moviesRoutes);
+app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/list", listRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // set static folder
