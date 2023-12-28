@@ -4,7 +4,7 @@ import { apiSlice } from "./apiSlice";
 // Replacing axios with RTK Query
 export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    // making post request to /api/users/auth
+    // making post request to /api/v1/users/auth
     login: builder.mutation({
       query: (data) => ({
         url: `${USERS_URL}/auth`,
