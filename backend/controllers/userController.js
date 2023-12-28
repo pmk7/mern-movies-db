@@ -4,7 +4,7 @@ import generateToken from "../utils/generateToken.js";
 import bcrypt from "bcryptjs";
 
 // @desc    Auth user & get token
-// @route   POST /api/users/login
+// @route   POST /api/v1/users/login
 // @access  Public
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -27,7 +27,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 // @desc    Register user
-// @route   POST /api/users
+// @route   POST /api/v1/users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
@@ -57,7 +57,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 // @desc    Logout user / clear cookie
-// @route   GET /api/users/logout
+// @route   GET /api/v1/users/logout
 // @access  Private
 const logoutUser = asyncHandler(async (req, res) => {
   res.cookie("jwt", "", {

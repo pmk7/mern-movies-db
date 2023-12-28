@@ -5,7 +5,7 @@ import { apiSlice } from "./apiSlice";
 export const moviesApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getMovies: builder.query({
-      // get request to /api/movies
+      // get request to /api/v1/movies
       query: ({ keyword, pageNumber, sortOrder }) => ({
         url: MOVIES_URL,
         params: {
@@ -13,23 +13,26 @@ export const moviesApiSlice = apiSlice.injectEndpoints({
           pageNumber,
         },
       }),
+      method: "GET",
       keepUnusedDataFor: 10,
     }),
     getMovieDetails: builder.query({
-      // get request to /api/movies/:id
+      // get request to /api/v1/movies/:id
       query: (movieId) => ({
         url: `${MOVIES_URL}/${movieId}`,
       }),
+      method: "GET",
       keepUnusedDataFor: 10,
     }),
     sortMoviesByRating: builder.query({
-      // get request to /api/movies/sort/rating
+      // get request to /api/v1/movies/sort/rating
       query: (sortOrder) => ({
         url: `${MOVIES_URL}/sort/rating`,
         params: {
           sortOrder,
         },
       }),
+      method: "GET",
       keepUnusedDataFor: 10,
     }),
   }),

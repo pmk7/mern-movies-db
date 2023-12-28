@@ -3,7 +3,7 @@ import asyncHandler from "../middleware/asyncHandler.js";
 import List from "../models/listModel.js";
 
 // @desc    Create new list or add to existing list
-// @route   POST /api/list
+// @route   POST /api/v1/list
 // @access  Private
 const createList = asyncHandler(async (req, res) => {
   const { user, listItems } = req.body;
@@ -56,9 +56,8 @@ const addToList = asyncHandler(async (req, res) => {
 });
 
 // @desc    Get logged in user list
-// @route   GET /api/list/:id
+// @route   GET /api/v1/list/:id
 // @access  Private
-
 const getMyList = asyncHandler(async (req, res) => {
   const list = await List.findOne({ user: req.params.id });
 
@@ -71,7 +70,7 @@ const getMyList = asyncHandler(async (req, res) => {
 });
 
 // @desc    Remove movie from list
-// @route   PUT /api/list/:id
+// @route   PUT /api/v1/list/:id
 // @access  Private
 const deleteMovieFromList = asyncHandler(async (req, res) => {
   const movieId = req.params.id;

@@ -14,17 +14,20 @@ const MoviePage = () => {
   const {userInfo} = useSelector((state) => state.auth)
   const userId = userInfo?._id 
 
-  
+
+
+
   const [createList] = useCreateListMutation();
 
   const navigate = useNavigate();
 
   const {data: movie, error, isLoading} = useGetMovieDetailsQuery(movieId);
 
-  const {data:list, refetch} = useGetMyListQuery(userId);
+  const { data: list, refetch } = useGetMyListQuery(userId, {
+    skip: !userId
+  });
 
   const addToListHandler = async () => {
-
     try {
       const user = userInfo._id
       const res = await createList({ 
@@ -46,8 +49,7 @@ const MoviePage = () => {
   const isMovieInList = () => { 
       return list?.listItems?.some(item => item.movieId === movieId);
     }
-    
-
+  
   const redirectToLoginHandler = () => {
     navigate('/login')
   }

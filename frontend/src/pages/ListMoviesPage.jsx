@@ -19,7 +19,6 @@ const ListMoviesPage = () => {
 
     const navigate = useNavigate();
  
-
     const  [deleteMovieFromList] = useDeleteMovieFromListMutation();   
 
     const removeFromListHandler = (movieId) => {
@@ -33,11 +32,8 @@ const ListMoviesPage = () => {
         }
       };
 
-
-
       useEffect(() => {
         refetch();
-        console.log(data)
         }
         ,[data, refetch]);
 
