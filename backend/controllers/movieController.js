@@ -41,7 +41,7 @@ const getMovies = asyncHandler(async (req, res) => {
 });
 
 // @desc    Fetch single movie
-// @route   GET /api/movies/:id
+// @route   GET /api/v1/movies/:id
 // @access  Public
 const getMovieById = asyncHandler(async (req, res) => {
   const movie = await Movie.findById(req.params.id);
@@ -55,7 +55,7 @@ const getMovieById = asyncHandler(async (req, res) => {
 });
 
 // @desc    Sort movies by rating
-// @route   GET /api/movies/sort/rating
+// @route   GET /api/v1/movies/sort/rating
 // @access  Public
 const sortMoviesByRating = asyncHandler(async (req, res) => {
   console.log(req.query.sortOrder);

@@ -27,6 +27,8 @@ const MoviePage = () => {
     skip: !userId
   });
 
+  
+
   const addToListHandler = async () => {
     try {
       const user = userInfo._id

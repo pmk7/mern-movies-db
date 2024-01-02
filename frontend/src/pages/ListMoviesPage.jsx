@@ -15,7 +15,11 @@ const ListMoviesPage = () => {
 
     const userId = userInfo._id 
 
-    const {data, refetch, isLoading } = useGetMyListQuery(userId);
+    // const {data, refetch, isLoading } = useGetMyListQuery(userId);
+
+    const { data, refetch, isLoading } = useGetMyListQuery(userId, {
+        skip: !userId
+      });
 
     const navigate = useNavigate();
  
